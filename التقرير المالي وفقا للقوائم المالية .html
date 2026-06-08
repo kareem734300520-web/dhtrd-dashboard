@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>التقرير المالي 2025م — شركة الضبيبي التجارية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── DESIGN SYSTEM ─────────────────────────────────────────────── */
+:root {
+  --bg:           #060d18;
+  --surface:      #0b1629;
+  --surface2:     #101f38;
+  --surface3:     #162844;
+  --border:       rgba(255,255,255,.07);
+  --border-hi:    rgba(255,255,255,.14);
+  --text:         #e8f2ff;
+  --text-2:       #7fa3c8;
+  --text-3:       #4a7099;
+
+  --gold:         #e6b45a;
+  --gold-soft:    rgba(230,180,90,.15);
+  --gold-glow:    rgba(230,180,90,.35);
+  --emerald:      #34d399;
+  --emerald-soft: rgba(52,211,153,.12);
+  --sky:          #38bdf8;
+  --sky-soft:     rgba(56,189,248,.12);
+  --rose:         #fb7185;
+  --rose-soft:    rgba(251,113,133,.12);
+  --amber:        #fbbf24;
+  --violet:       #a78bfa;
+
+  --radius:       16px;
+  --radius-lg:    24px;
+  --radius-xl:    32px;
+  --shadow:       0 4px 24px rgba(0,0,0,.4);
+  --shadow-lg:    0 8px 48px rgba(0,0,0,.5);
+
+  --sidebar-w:    260px;
+  --font:         "IBM Plex Sans Arabic", "Tahoma", sans-serif;
+}
+
+/* ── RESET ─────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 15px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+button, select, input { font-family: var(--font); }
+a { text-decoration: none; color: inherit; }
+
+/* ── SCROLLBAR ─────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--surface3); border-radius: 99px; }
+
+/* ── LAYOUT ────────────────────────────────────────────────────── */
+.app { display: flex; min-height: 100vh; }
+
+/* ── SIDEBAR ───────────────────────────────────────────────────── */
+.sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, #0a1525 0%, #060d18 100%);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  overflow-y: auto;
+  transition: transform .3s ease;
+}
+.sidebar-logo {
+  padding: 24px 20px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.logo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold-soft);
+  border: 1px solid var(--gold-glow);
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-size: 11px;
+  color: var(--gold);
+  margin-bottom: 12px;
+  letter-spacing: .03em;
+}
+.logo-icon {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(.8)} }
+.sidebar-logo h1 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+.sidebar-logo p {
+  font-size: 12px;
+  color: var(--text-2);
+  margin-top: 4px;
+}
+.nav-section {
+  padding: 20px 14px 12px;
+  flex: 1;
+}
+.nav-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: var(--text-3);
+  padding: 0 8px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: var(--text-2);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .2s;
+  margin-bottom: 2px;
+  border: 1px solid transparent;
+}
+.nav-item:hover { background: var(--surface2); color: var(--text); }
+.nav-item.active {
+  background: var(--gold-soft);
+  border-color: var(--gold-glow);
+  color: var(--gold);
+}
+.nav-icon { font-size: 16px; opacity: .8; }
+.nav-num {
+  margin-right: auto;
+  font-size: 10px;
+  background: var(--surface3);
+  padding: 2px 7px;
+  border-radius: 99px;
+  color: var(--text-3);
+}
+.sidebar-footer {
+  padding: 16px 20px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  color: var(--text-3);
+  line-height: 1.8;
+}
+
+/* ── MAIN CONTENT ──────────────────────────────────────────────── */
+.main {
+  margin-right: var(--sidebar-w);
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+}
+
+/* ── TOP BAR ───────────────────────────────────────────────────── */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: rgba(6,13,24,.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+}
+.topbar-title { font-size: 14px; font-weight: 600; color: var(--text-2); }
+.topbar-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--emerald);
+  background: var(--emerald-soft);
+  border: 1px solid rgba(52,211,153,.25);
+  padding: 5px 12px;
+  border-radius: 99px;
+}
+.dot { width:6px;height:6px;border-radius:50%;background:var(--emerald); }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text-2);
+  border-radius: 2px;
+  transition: .3s;
+}
+
+/* ── CONTENT SECTIONS ──────────────────────────────────────────── */
+.content { padding: 28px; }
+.section { margin-bottom: 32px; }
+.section:last-child { margin-bottom: 0; }
+
+/* ── HERO ──────────────────────────────────────────────────────── */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface2) 100%);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-xl);
+  padding: 36px 40px;
+  margin-bottom: 28px;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 80% at 90% 50%, rgba(230,180,90,.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(56,189,248,.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gold-soft);
+  border: 1px solid var(--gold-glow);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 99px;
+  margin-bottom: 16px;
+  letter-spacing: .04em;
+}
+.hero-title {
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.hero-title span { color: var(--gold); }
+.hero-sub {
+  font-size: 14px;
+  color: var(--text-2);
+  max-width: 680px;
+  line-height: 1.7;
+}
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+.hero-stat { display: flex; flex-direction: column; gap: 3px; }
+.hero-stat-val {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  direction: ltr;
+  text-align: right;
+}
+.hero-stat-val.good { color: var(--emerald); }
+.hero-stat-val.warn { color: var(--gold); }
+.hero-stat-val.bad  { color: var(--rose); }
+.hero-stat-lbl { font-size: 12px; color: var(--text-3); }
+.hero-divider { width: 1px; background: var(--border-hi); align-self: stretch; }
+
+/* ── SECTION HEADER ────────────────────────────────────────────── */
+.sec-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.sec-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+.sec-sub {
+  font-size: 13px;
+  color: var(--text-3);
+}
+.sec-badge {
+  margin-right: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+.sec-badge.green { background: var(--emerald-soft); color: var(--emerald); border: 1px solid rgba(52,211,153,.25); }
+.sec-badge.gold  { background: var(--gold-soft); color: var(--gold); border: 1px solid var(--gold-glow); }
+.sec-badge.sky   { background: var(--sky-soft); color: var(--sky); border: 1px solid rgba(56,189,248,.25); }
+.sec-badge.rose  { background: var(--rose-soft); color: var(--rose); border: 1px solid rgba(251,113,133,.25); }
+
+/* ── GRID LAYOUTS ──────────────────────────────────────────────── */
+.g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.g2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.g21 { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; }
+.g12 { display: grid; grid-template-columns: 1fr 1.4fr; gap: 16px; }
+.g13 { display: grid; grid-template-columns: 1fr 2.2fr; gap: 16px; }
+
+/* ── CARD ──────────────────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.card:hover { border-color: var(--border-hi); box-shadow: var(--shadow); }
+.card-title { font-size: 13px; font-weight: 600; color: var(--text-2); margin-bottom: 12px; }
+.card-value {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  direction: ltr;
+  text-align: right;
+}
+
+/* ── KPI CARDS ─────────────────────────────────────────────────── */
+.kpi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: all .25s;
+}
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 100%; height: 3px;
+  opacity: .6;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.kpi-card.gold-card::before  { background: linear-gradient(90deg, transparent, var(--gold)); }
+.kpi-card.green-card::before { background: linear-gradient(90deg, transparent, var(--emerald)); }
+.kpi-card.sky-card::before   { background: linear-gradient(90deg, transparent, var(--sky)); }
+.kpi-card.rose-card::before  { background: linear-gradient(90deg, transparent, var(--rose)); }
+.kpi-card.violet-card::before{ background: linear-gradient(90deg, transparent, var(--violet)); }
+.kpi-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: var(--border-hi); }
+
+.kpi-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px;
+  margin-bottom: 14px;
+}
+.kpi-icon.gold-ic   { background: var(--gold-soft); }
+.kpi-icon.green-ic  { background: var(--emerald-soft); }
+.kpi-icon.sky-ic    { background: var(--sky-soft); }
+.kpi-icon.rose-ic   { background: var(--rose-soft); }
+.kpi-icon.violet-ic { background: rgba(167,139,250,.15); }
+
+.kpi-lbl { font-size: 12px; color: var(--text-2); margin-bottom: 6px; font-weight: 500; }
+.kpi-val {
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 700;
+  direction: ltr;
+  text-align: right;
+  line-height: 1.1;
+}
+.kpi-val.c-gold    { color: var(--gold); }
+.kpi-val.c-green   { color: var(--emerald); }
+.kpi-val.c-sky     { color: var(--sky); }
+.kpi-val.c-rose    { color: var(--rose); }
+.kpi-val.c-violet  { color: var(--violet); }
+.kpi-note { font-size: 11.5px; color: var(--text-3); margin-top: 6px; }
+.kpi-progress {
+  margin-top: 12px;
+  height: 3px;
+  background: var(--surface3);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.kpi-progress-fill { height: 100%; border-radius: 99px; }
+
+/* ── CHART WRAPPERS ────────────────────────────────────────────── */
+.chart-area { width: 100%; overflow: hidden; }
+.chart-area svg { width: 100%; display: block; }
+
+/* ── BAR CHART ─────────────────────────────────────────────────── */
+.bar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+}
+.bar-item:last-child { border-bottom: none; }
+.bar-name { font-size: 12px; color: var(--text-2); width: 150px; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bar-track { flex: 1; height: 14px; background: var(--surface3); border-radius: 99px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 99px; transition: width .6s ease; }
+.bar-val { font-size: 11.5px; color: var(--text); width: 85px; text-align: left; flex-shrink: 0; direction: ltr; }
+
+/* ── DONUT / RING CHART ────────────────────────────────────────── */
+.ring-legend { display: grid; gap: 8px; margin-top: 12px; }
+.ring-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-2); }
+.ring-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.ring-pct { margin-right: auto; color: var(--text); font-weight: 600; direction: ltr; }
+
+/* ── TABLE ─────────────────────────────────────────────────────── */
+.tbl-wrap { overflow: auto; border-radius: 14px; border: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; min-width: 560px; }
+th, td { padding: 11px 14px; border-bottom: 1px solid var(--border); text-align: right; white-space: nowrap; font-size: 13px; }
+th { background: var(--surface2); font-weight: 600; color: var(--text-2); font-size: 12px; position: sticky; top: 0; z-index: 1; }
+td { color: var(--text); }
+tr:last-child td { border-bottom: none; }
+td.num { direction: ltr; text-align: left; font-variant-numeric: tabular-nums; }
+tr:hover td { background: rgba(255,255,255,.02); }
+.td-good { color: var(--emerald) !important; font-weight: 600; }
+.td-bad  { color: var(--rose) !important; font-weight: 600; }
+.td-gold { color: var(--gold) !important; font-weight: 600; }
+
+/* ── RANK BADGE ────────────────────────────────────────────────── */
+.rank { display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;font-size:11px;font-weight:700; }
+.rank-1 { background:rgba(230,180,90,.25);color:var(--gold); }
+.rank-2 { background:rgba(167,139,250,.2);color:var(--violet); }
+.rank-3 { background:rgba(56,189,248,.15);color:var(--sky); }
+.rank-n { background:var(--surface3);color:var(--text-3); }
+
+/* ── TREND SPARKLINE ───────────────────────────────────────────── */
+.sparkline { height: 36px; width: 80px; }
+
+/* ── INSIGHT CARDS ─────────────────────────────────────────────── */
+.insight-card {
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+.insight-card::before {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 4px;
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+.insight-card.opp  { background: rgba(52,211,153,.06); border-color: rgba(52,211,153,.2); }
+.insight-card.opp::before  { background: var(--emerald); }
+.insight-card.risk { background: rgba(251,113,133,.06); border-color: rgba(251,113,133,.2); }
+.insight-card.risk::before { background: var(--rose); }
+.insight-card.warn { background: rgba(230,180,90,.06); border-color: rgba(230,180,90,.2); }
+.insight-card.warn::before { background: var(--gold); }
+.insight-card.info { background: rgba(56,189,248,.06); border-color: rgba(56,189,248,.2); }
+.insight-card.info::before { background: var(--sky); }
+.insight-type {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.opp .insight-type  { color: var(--emerald); }
+.risk .insight-type { color: var(--rose); }
+.warn .insight-type { color: var(--gold); }
+.info .insight-type { color: var(--sky); }
+.insight-title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.insight-body  { font-size: 12.5px; color: var(--text-2); line-height: 1.65; }
+.insight-metric {
+  margin-top: 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.insight-metric-val { font-size: 22px; font-weight: 700; }
+.opp  .insight-metric-val { color: var(--emerald); }
+.risk .insight-metric-val { color: var(--rose); }
+.warn .insight-metric-val { color: var(--gold); }
+.info .insight-metric-val { color: var(--sky); }
+.insight-metric-lbl { font-size: 12px; color: var(--text-3); }
+
+/* ── BRANCH DETAIL PANEL ───────────────────────────────────────── */
+.branch-selector {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.branch-btn-nav {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.branch-btn-nav:hover { background: var(--surface3); color: var(--text); }
+.branch-list { display: grid; gap: 6px; max-height: 480px; overflow-y: auto; }
+.branch-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all .2s;
+  font-size: 12.5px;
+}
+.branch-pill:hover { background: var(--surface3); border-color: var(--border-hi); }
+.branch-pill.active { background: var(--gold-soft); border-color: var(--gold-glow); color: var(--gold); }
+.branch-pill-name { font-weight: 500; }
+.branch-pill-val { font-size: 11px; direction: ltr; }
+.branch-detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.branch-metric {
+  background: var(--surface2);
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+}
+.branch-metric-lbl { font-size: 11px; color: var(--text-3); margin-bottom: 4px; }
+.branch-metric-val { font-size: 18px; font-weight: 700; direction: ltr; text-align: right; }
+
+/* ── WATERFALL ─────────────────────────────────────────────────── */
+.wfall-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.wfall-row:last-child { border-bottom: none; }
+.wfall-label { width: 160px; flex-shrink: 0; font-size: 12px; color: var(--text-2); }
+.wfall-bar-wrap { flex: 1; height: 16px; background: var(--surface3); border-radius: 99px; overflow: hidden; }
+.wfall-bar { height: 100%; border-radius: 99px; }
+.wfall-val { width: 100px; flex-shrink: 0; font-size: 12px; direction: ltr; text-align: left; }
+
+/* ── MATRIX / BUBBLE ───────────────────────────────────────────── */
+.matrix-label { font-size: 10px; fill: var(--text-3); }
+
+/* ── TABS ──────────────────────────────────────────────────────── */
+.tabs { display: flex; gap: 4px; margin-bottom: 16px; background: var(--surface2); padding: 4px; border-radius: 12px; }
+.tab {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--text-3);
+  transition: all .2s;
+}
+.tab.active { background: var(--surface3); color: var(--text); }
+
+/* ── PILL TAGS ─────────────────────────────────────────────────── */
+.ptag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 99px;
+  font-weight: 600;
+}
+.ptag.green { background: var(--emerald-soft); color: var(--emerald); }
+.ptag.red   { background: var(--rose-soft); color: var(--rose); }
+.ptag.gold  { background: var(--gold-soft); color: var(--gold); }
+
+/* ── SELECT ────────────────────────────────────────────────────── */
+.styled-select {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  outline: none;
+  min-width: 200px;
+}
+.styled-select:focus { border-color: var(--border-hi); }
+
+/* ── TOOLTIP ───────────────────────────────────────────────────── */
+.tooltip {
+  position: fixed;
+  background: var(--surface3);
+  border: 1px solid var(--border-hi);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: var(--text);
+  pointer-events: none;
+  z-index: 1000;
+  display: none;
+  box-shadow: var(--shadow);
+  min-width: 180px;
+}
+
+/* ── SEARCH ────────────────────────────────────────────────────── */
+.search-box {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  outline: none;
+  width: 100%;
+  max-width: 280px;
+}
+.search-box::placeholder { color: var(--text-3); }
+.search-box:focus { border-color: var(--border-hi); }
+
+/* ── MOBILE OVERLAY ────────────────────────────────────────────── */
+.overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 99;
+  display: none;
+  backdrop-filter: blur(4px);
+}
+
+/* ── RESPONSIVE ────────────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .g4 { grid-template-columns: repeat(2, 1fr); }
+  .g3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  :root { --sidebar-w: 260px; }
+  .sidebar { transform: translateX(100%); }
+  .sidebar.open { transform: translateX(0); }
+  .main { margin-right: 0; }
+  .hamburger { display: flex; }
+  .overlay.show { display: block; }
+  .g21, .g12, .g13 { grid-template-columns: 1fr; }
+  .hero-stats { gap: 20px; }
+  .hero-divider { display: none; }
+}
+@media (max-width: 600px) {
+  .content { padding: 14px; }
+  .g4, .g3, .g2 { grid-template-columns: 1fr; }
+  .topbar { padding: 12px 16px; }
+  .hero-section { padding: 22px 18px; }
+  .tabs { flex-wrap: wrap; }
+  .branch-detail-grid { grid-template-columns: 1fr; }
+}
+
+/* ── ANIMATIONS ────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp .5s ease both; }
+.delay-1 { animation-delay: .05s; }
+.delay-2 { animation-delay: .10s; }
+.delay-3 { animation-delay: .15s; }
+.delay-4 { animation-delay: .20s; }
+.delay-5 { animation-delay: .25s; }
+.delay-6 { animation-delay: .30s; }
+.delay-7 { animation-delay: .35s; }
+.delay-8 { animation-delay: .40s; }
+
+/* ── PAGE SECTIONS ─────────────────────────────────────────────── */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ── MATRIX CHART ──────────────────────────────────────────────── */
+.matrix-wrap { overflow: auto; padding: 8px 0; }
+
+/* ── EXPENSE TABLE ─────────────────────────────────────────────── */
+.exp-bar { height: 8px; background: var(--surface3); border-radius: 99px; overflow: hidden; margin-top: 5px; }
+.exp-fill { height: 100%; border-radius: 99px; }
+
+/* ── PROFITABILITY MATRIX ──────────────────────────────────────── */
+.profit-zone {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.p-zone {
+  border-radius: 14px;
+  padding: 16px;
+  border: 1px solid transparent;
+}
+.p-zone.star { background: rgba(230,180,90,.08); border-color: rgba(230,180,90,.25); }
+.p-zone.grow { background: rgba(56,189,248,.06); border-color: rgba(56,189,248,.2); }
+.p-zone.cash { background: rgba(52,211,153,.06); border-color: rgba(52,211,153,.2); }
+.p-zone.watch { background: rgba(251,113,133,.06); border-color: rgba(251,113,133,.2); }
+.p-zone-title { font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+.star .p-zone-title  { color: var(--gold); }
+.grow .p-zone-title  { color: var(--sky); }
+.cash .p-zone-title  { color: var(--emerald); }
+.watch .p-zone-title { color: var(--rose); }
+.p-zone-branches { display: flex; flex-direction: column; gap: 4px; }
+.p-zone-item { font-size: 11.5px; color: var(--text-2); }
+
+/* ── TREND INDICATOR ───────────────────────────────────────────── */
+.trend-up   { color: var(--emerald); }
+.trend-down { color: var(--rose); }
+.trend-flat { color: var(--text-3); }
+
+/* ── DETAIL STATEMENT TABLE ────────────────────────────────────── */
+.stmt-section { 
+  background: var(--surface2);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.stmt-section-head {
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.stmt-section-head.rev  { background: rgba(56,189,248,.12); color: var(--sky); }
+.stmt-section-head.cogs { background: rgba(251,113,133,.12); color: var(--rose); }
+.stmt-section-head.gp   { background: rgba(52,211,153,.12); color: var(--emerald); }
+.stmt-section-head.exp  { background: rgba(167,139,250,.12); color: var(--violet); }
+.stmt-section-head.op   { background: rgba(230,180,90,.12); color: var(--gold); }
+.stmt-section-head.net  { background: rgba(230,180,90,.2); color: var(--gold); }
+.stmt-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12.5px;
+}
+.stmt-row:last-child { border-bottom: none; }
+.stmt-row-name { color: var(--text-2); }
+.stmt-row-val { direction: ltr; font-variant-numeric: tabular-nums; font-weight: 500; }
+.stmt-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  font-weight: 700;
+  font-size: 13.5px;
+}
+</style>
+</head>
+<body>
+
+<div class="tooltip" id="tooltip"></div>
+<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+<!-- ══════════════ SIDEBAR ══════════════ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-badge">
+      <div class="logo-icon"></div>
+      تقرير تنفيذي مباشر
+    </div>
+    <h1>شركة الضبيبي التجارية</h1>
+    <p>التقرير المالي للعام 2025م</p>
+  </div>
+
+  <nav class="nav-section">
+    <div class="nav-label">التنقل الرئيسي</div>
+    <a class="nav-item active" onclick="showPage('overview')">
+      <span class="nav-icon">📊</span>
+      التقرير المالي وفقاً للقوائم المالية
+      <span class="nav-num">01</span>
+    </a>
+    <a class="nav-item" onclick="showPage('kpis')">
+      <span class="nav-icon">🎯</span>
+      مؤشرات الأداء الرئيسية
+      <span class="nav-num">02</span>
+    </a>
+    <a class="nav-item" onclick="showPage('branches')">
+      <span class="nav-icon">🏪</span>
+      تحليل الفروع
+      <span class="nav-num">03</span>
+    </a>
+    <a class="nav-item" onclick="showPage('income')">
+      <span class="nav-icon">📋</span>
+      قائمة الدخل الموحدة
+      <span class="nav-num">04</span>
+    </a>
+    <a class="nav-item" onclick="showPage('expenses')">
+      <span class="nav-icon">💸</span>
+      تحليل المصروفات
+      <span class="nav-num">05</span>
+    </a>
+    <a class="nav-item" onclick="showPage('detail')">
+      <span class="nav-icon">🔍</span>
+      القوائم التفصيلية
+      <span class="nav-num">06</span>
+    </a>
+    <a class="nav-item" onclick="showPage('insights')">
+      <span class="nav-icon">💡</span>
+      الرؤى والتوصيات
+      <span class="nav-num">07</span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div>جميع الأرقام بالريال السعودي</div>
+    <div>البيانات: ملف Excel الرسمي</div>
+    <div>التقرير: شامل ودقيق</div>
+  </div>
+</aside>
+
+<!-- ══════════════ MAIN ══════════════ -->
+<main class="main">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="topbar-title" id="pageTitle">التقرير المالي وفقاً للقوائم المالية</div>
+    <div class="topbar-status">
+      <div class="dot"></div>
+      19 فرع · البيانات محدّثة
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- ══════════ PAGE 01: OVERVIEW ══════════ -->
+    <div class="page active" id="page-overview">
+
+      <!-- HERO -->
+      <div class="hero-section fade-up">
+        <div class="hero-bg"></div>
+        <div class="hero-grid-overlay"></div>
+        <div class="hero-tag">📊 التقرير المالي السنوي</div>
+        <h1 class="hero-title">التقرير المالي<br><span>للعام 2025م</span></h1>
+        <p class="hero-sub">التقرير المالي الختامي لشركة الضبيبي التجارية وفقاً للقوائم المالية المعتمدة، يشمل الإيرادات والتكاليف والمصاريف وصافي الأرباح لجميع الفروع والأقسام للعام المالي 2025م.</p>
+        <div class="hero-stats" id="heroStats"></div>
+      </div>
+
+      <!-- KPI CARDS ROW -->
+      <div class="section">
+        <div class="sec-header">
+          <div class="sec-title">المؤشرات المالية الرئيسية</div>
+          <div class="sec-sub">ملخص الأداء الكلي</div>
+        </div>
+        <div class="g4" id="mainKpis"></div>
+      </div>
+
+      <!-- CHARTS ROW 1 -->
+      <div class="section g21">
+        <div class="card fade-up delay-2">
+          <div class="sec-header">
+            <div class="sec-title" style="font-size:15px">ترتيب الفروع — صافي الربح</div>
+            <span class="sec-badge green">أعلى 10</span>
+          </div>
+          <div id="profitBarChart"></div>
+        </div>
+        <div class="card fade-up delay-3">
+          <div class="sec-header">
+            <div class="sec-title" style="font-size:15px">هيكل قائمة الدخل</div>
+            <span class="sec-badge gold">الجسر المالي</span>
+          </div>
+          <div id="waterfallChart"></div>
+        </div>
+      </div>
+
+      <!-- CHARTS ROW 2 -->
+      <div class="section g2">
+        <div class="card fade-up delay-3">
+          <div class="sec-header">
+            <div class="sec-title" style="font-size:15px">مقارنة الهوامش</div>
+            <span class="sec-badge sky">هامش صافي الربح</span>
+          </div>
+          <div id="marginBarChart"></div>
+        </div>
+        <div class="card fade-up delay-4">
+          <div class="sec-header">
+            <div class="sec-title" style="font-size:15px">توزيع الإيرادات</div>
+            <span class="sec-badge gold">مساهمة كل فرع</span>
+          </div>
+          <div id="revenueDistChart"></div>
+        </div>
+      </div>
+
+      <!-- PROFITABILITY MATRIX -->
+      <div class="section">
+        <div class="sec-header">
+          <div class="sec-title">مصفوفة الربحية التشغيلية</div>
+          <div class="sec-sub">تصنيف الفروع حسب الأداء</div>
+        </div>
+        <div class="profit-zone" id="profitMatrix"></div>
+      </div>
+
+    </div><!-- end overview -->
+
+    <!-- ══════════ PAGE 02: KPIs ══════════ -->
+    <div class="page" id="page-kpis">
+      <div class="sec-header">
+        <div class="sec-title">مؤشرات الأداء الرئيسية</div>
+        <div class="sec-sub">تحليل شامل للمقاييس المالية الأساسية</div>
+      </div>
+      <div class="g4" id="kpiPage" style="margin-bottom:24px"></div>
+      <div class="g2">
+        <div class="card">
+          <div class="card-title">ترتيب الفروع — الإيرادات</div>
+          <div id="revRankChart"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">ترتيب الفروع — هامش الربح الإجمالي</div>
+          <div id="grossMarginChart"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════ PAGE 03: BRANCHES ══════════ -->
+    <div class="page" id="page-branches">
+      <div class="sec-header">
+        <div class="sec-title">تحليل الفروع التفاعلي</div>
+        <div class="sec-sub">اختر فرعاً لعرض تفاصيله الكاملة</div>
+      </div>
+      <div class="g13">
+        <div class="card" style="height:fit-content">
+          <div class="card-title">قائمة الفروع</div>
+          <div class="branch-selector" style="margin-bottom:12px;display:flex;gap:6px;">
+            <button class="branch-btn-nav" onclick="moveBranchD(-1)">▶ السابق</button>
+            <button class="branch-btn-nav" onclick="moveBranchD(1)">التالي ◀</button>
+          </div>
+          <div class="branch-list" id="branchListNav"></div>
+        </div>
+        <div>
+          <div class="card" id="branchDetailCard" style="margin-bottom:16px"></div>
+          <div class="card">
+            <div class="card-title">تفاصيل بنود الدخل والمصروفات</div>
+            <div id="branchStatementDetail"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════ PAGE 04: INCOME ══════════ -->
+    <div class="page" id="page-income">
+      <div class="sec-header">
+        <div class="sec-title">قائمة الدخل الموحدة</div>
+        <div class="sec-sub">الشركة ككل — مجمّع 19 فرع</div>
+      </div>
+      <div class="g2">
+        <div class="card">
+          <div class="card-title">جدول قائمة الدخل</div>
+          <div class="tbl-wrap">
+            <table id="incomeTable"></table>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">تحليل الجسر المالي المرئي</div>
+          <div id="incomeBridge"></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="card">
+          <div class="sec-header">
+            <div class="sec-title" style="font-size:15px">مقارنة مكونات الإيرادات والتكاليف</div>
+          </div>
+          <div id="incomeCompChart"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════ PAGE 05: EXPENSES ══════════ -->
+    <div class="page" id="page-expenses">
+      <div class="sec-header">
+        <div class="sec-title">تحليل المصروفات التشغيلية</div>
+        <div class="sec-sub">تفصيل بنود الإنفاق وترتيبها بالحجم</div>
+      </div>
+      <div class="g2" style="margin-bottom:20px">
+        <div class="kpi-card sky-card fade-up">
+          <div class="kpi-icon sky-ic">💸</div>
+          <div class="kpi-lbl">إجمالي المصروفات التشغيلية</div>
+          <div class="kpi-val c-sky" id="totalExpVal"></div>
+          <div class="kpi-note">من إجمالي الإيرادات</div>
+        </div>
+        <div class="kpi-card rose-card fade-up delay-1">
+          <div class="kpi-icon rose-ic">⚠️</div>
+          <div class="kpi-lbl">أكبر بند مصروف</div>
+          <div class="kpi-val c-rose" style="font-size:16px">مصاريف الرئيسي</div>
+          <div class="kpi-note">33% من المصروفات التشغيلية</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">تفصيل بنود المصروفات</div>
+        <div id="expensesTable"></div>
+      </div>
+      <div class="section g2">
+        <div class="card">
+          <div class="card-title">مخطط المصروفات</div>
+          <div id="expBarChart"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">تحليل باريتو — المصروفات</div>
+          <div id="paretoChart"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════ PAGE 06: DETAIL ══════════ -->
+    <div class="page" id="page-detail">
+      <div class="sec-header">
+        <div class="sec-title">القوائم المالية التفصيلية</div>
+        <div class="sec-sub">قائمة دخل كاملة لكل فرع</div>
+      </div>
+      <div class="g13">
+        <div class="card" style="height:fit-content">
+          <div class="card-title">اختر الفرع</div>
+          <select class="styled-select" id="detailBranchSelect" onchange="renderDetailStatement()" style="width:100%;margin-bottom:12px"></select>
+          <div style="display:flex;gap:8px;">
+            <button class="branch-btn-nav" onclick="moveDetail(-1)" style="flex:1">▶ السابق</button>
+            <button class="branch-btn-nav" onclick="moveDetail(1)" style="flex:1">التالي ◀</button>
+          </div>
+          <div style="margin-top:16px" id="detailBranchSummary"></div>
+        </div>
+        <div class="card">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+            <div class="card-title" style="margin:0" id="detailBranchTitle">قائمة الدخل التفصيلية</div>
+            <input type="text" class="search-box" placeholder="بحث في البنود..." oninput="filterDetail(this.value)">
+          </div>
+          <div id="detailStatement"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════ PAGE 07: INSIGHTS ══════════ -->
+    <div class="page" id="page-insights">
+      <div class="sec-header">
+        <div class="sec-title">الرؤى والتوصيات التنفيذية</div>
+        <div class="sec-sub">تحليل استراتيجي ومقترحات قابلة للتنفيذ</div>
+      </div>
+      <div class="g2" id="insightCards" style="margin-bottom:24px"></div>
+
+      <div class="sec-header">
+        <div class="sec-title">جدول الفروع الشامل</div>
+        <div class="sec-sub">مقارنة مفصلة بالترتيب والأداء</div>
+      </div>
+      <div class="card">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:14px">
+          <div class="card-title" style="margin:0">جدول الأداء المقارن</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="tab active" onclick="sortTable('الربحية',this)">ترتيب الربحية</button>
+            <button class="tab" onclick="sortTable('الإيرادات',this)">ترتيب الإيرادات</button>
+            <button class="tab" onclick="sortTable('الهامش',this)">هامش صافي الربح</button>
+          </div>
+        </div>
+        <div class="tbl-wrap">
+          <table id="insightTable"></table>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end content -->
+</main>
+
+<script>
+const DASHBOARD_DATA = {"summary":{"إجمالي الإيرادات":36498415.24,"تكلفة المبيعات":-25907181.97,"مجمل الربح":10591233.27,"هامش مجمل الربح":0.290183,"المصاريف التشغيلية":-10280015.47,"الربح التشغيلي":311217.8,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":311525.38,"هامش صافي الربح":0.008535,"أفضل فرع":"شركة الضبيبي التجارية - قسم المشاريع","أقل فرع":"الضبيبي للاثاث شارع الحج","عدد الفروع":19,"الفروع الرابحة":17,"الفروع الخاسرة":2,"أكبر مصروف":"مصاريف الرئيسي","قيمة أكبر مصروف":4427381.54},"branches":[{"الفرع":"شركة الضبيبي التجارية - قسم المشاريع","الإيرادات":3807030.58,"تكلفة المبيعات":-2902624.49,"مجمل الربح":904406.09,"هامش مجمل الربح":0.2376,"المصاريف التشغيلية":-812274.84,"الربح التشغيلي":92131.25,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":92438.86,"هامش صافي الربح":0.0243,"ترتيب الربحية":1,"ترتيب الإيرادات":1},{"الفرع":"الضبيبي للسجاد العمرة","الإيرادات":2812055.47,"تكلفة المبيعات":-1922319.76,"مجمل الربح":889735.71,"هامش مجمل الربح":0.3164,"المصاريف التشغيلية":-809939.07,"الربح التشغيلي":79796.64,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":79796.64,"هامش صافي الربح":0.0284,"ترتيب الربحية":2,"ترتيب الإيرادات":4},{"الفرع":"التميز للسجاد","الإيرادات":2499149.18,"تكلفة المبيعات":-1659278.11,"مجمل الربح":839871.07,"هامش مجمل الربح":0.3361,"المصاريف التشغيلية":-782423.12,"الربح التشغيلي":57447.95,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":57447.95,"هامش صافي الربح":0.023,"ترتيب الربحية":3,"ترتيب الإيرادات":7},{"الفرع":"الضبيبي للمفروشات العمرة","الإيرادات":2895363.54,"تكلفة المبيعات":-2104552.07,"مجمل الربح":790811.47,"هامش مجمل الربح":0.2731,"المصاريف التشغيلية":-743440.43,"الربح التشغيلي":47371.04,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":47371.04,"هامش صافي الربح":0.0164,"ترتيب الربحية":4,"ترتيب الإيرادات":3},{"الفرع":"الضبيبي ولي العهد","الإيرادات":2606757.24,"تكلفة المبيعات":-1690105.02,"مجمل الربح":916652.22,"هامش مجمل الربح":0.3516,"المصاريف التشغيلية":-886115.78,"الربح التشغيلي":30536.44,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":30536.41,"هامش صافي الربح":0.0117,"ترتيب الربحية":5,"ترتيب الإيرادات":5},{"الفرع":"العز للاثاث الدواس","الإيرادات":3429163.19,"تكلفة المبيعات":-2452961.96,"مجمل الربح":976201.23,"هامش مجمل الربح":0.2847,"المصاريف التشغيلية":-946181.48,"الربح التشغيلي":30019.75,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":30019.75,"هامش صافي الربح":0.0088,"ترتيب الربحية":6,"ترتيب الإيرادات":2},{"الفرع":"الرائد للسجاد بن دايل","الإيرادات":2586427.08,"تكلفة المبيعات":-1854196.09,"مجمل الربح":732230.99,"هامش مجمل الربح":0.2831,"المصاريف التشغيلية":-703994.96,"الربح التشغيلي":28236.03,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":28236.03,"هامش صافي الربح":0.0109,"ترتيب الربحية":7,"ترتيب الإيرادات":6},{"الفرع":"الضبيبي للمفروشات بن دايل","الإيرادات":1768860.18,"تكلفة المبيعات":-1355537.28,"مجمل الربح":413322.9,"هامش مجمل الربح":0.2337,"المصاريف التشغيلية":-398680.43,"الربح التشغيلي":14642.47,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":14642.47,"هامش صافي الربح":0.0083,"ترتيب الربحية":8,"ترتيب الإيرادات":11},{"الفرع":"الضبيبي للأثاث والانارة بن دايل","الإيرادات":638570.25,"تكلفة المبيعات":-430025.74,"مجمل الربح":208544.51,"هامش مجمل الربح":0.3266,"المصاريف التشغيلية":-196020.41,"الربح التشغيلي":12524.1,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":12524.1,"هامش صافي الربح":0.0196,"ترتيب الربحية":9,"ترتيب الإيرادات":17},{"الفرع":"قمر للمفروشات الدواس","الإيرادات":2192313.96,"تكلفة المبيعات":-1659804.22,"مجمل الربح":532509.74,"هامش مجمل الربح":0.2429,"المصاريف التشغيلية":-521611.48,"الربح التشغيلي":10898.26,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":10898.26,"هامش صافي الربح":0.005,"ترتيب الربحية":10,"ترتيب الإيرادات":8},{"الفرع":"قمر للمفروشات العمرة","الإيرادات":1969586.88,"تكلفة المبيعات":-1417117.97,"مجمل الربح":552468.91,"هامش مجمل الربح":0.2805,"المصاريف التشغيلية":-544639.93,"الربح التشغيلي":7828.98,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":7828.98,"هامش صافي الربح":0.004,"ترتيب الربحية":11,"ترتيب الإيرادات":10},{"الفرع":"الرئيسي مع المتجر والخياطة","الإيرادات":281579.42,"تكلفة المبيعات":-251974.17,"مجمل الربح":29605.25,"هامش مجمل الربح":0.1051,"المصاريف التشغيلية":-22136.91,"الربح التشغيلي":7468.34,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":7468.34,"هامش صافي الربح":0.0265,"ترتيب الربحية":12,"ترتيب الإيرادات":19},{"الفرع":"الضبيبي للمفروشات الدواس","الإيرادات":2153488.71,"تكلفة المبيعات":-1638721.82,"مجمل الربح":514766.89,"هامش مجمل الربح":0.239,"المصاريف التشغيلية":-507963.83,"الربح التشغيلي":6803.06,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":6803.06,"هامش صافي الربح":0.0032,"ترتيب الربحية":13,"ترتيب الإيرادات":9},{"الفرع":"الضبيبي للأثاث الجموم","الإيرادات":1382902.42,"تكلفة المبيعات":-887190.24,"مجمل الربح":495712.18,"هامش مجمل الربح":0.3585,"المصاريف التشغيلية":-492614.91,"الربح التشغيلي":3097.27,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":3097.27,"هامش صافي الربح":0.0022,"ترتيب الربحية":14,"ترتيب الإيرادات":14},{"الفرع":"العز للمفروشات والاثاث","الإيرادات":941948.93,"تكلفة المبيعات":-580907.93,"مجمل الربح":361041.0,"هامش مجمل الربح":0.3833,"المصاريف التشغيلية":-359281.84,"الربح التشغيلي":1759.16,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":1759.16,"هامش صافي الربح":0.0019,"ترتيب الربحية":15,"ترتيب الإيرادات":15},{"الفرع":"الضبيبي للأثاث العمرة","الإيرادات":1690380.38,"تكلفة المبيعات":-1101258.65,"مجمل الربح":589121.73,"هامش مجمل الربح":0.3485,"المصاريف التشغيلية":-587855.94,"الربح التشغيلي":1265.79,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":1265.79,"هامش صافي الربح":0.0007,"ترتيب الربحية":16,"ترتيب الإيرادات":12},{"الفرع":"الضبيبي للسجاد الدواس","الإيرادات":1634773.89,"تكلفة المبيعات":-1128000.88,"مجمل الربح":506773.01,"هامش مجمل الربح":0.31,"المصاريف التشغيلية":-506130.22,"الربح التشغيلي":642.79,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":642.79,"هامش صافي الربح":0.0004,"ترتيب الربحية":17,"ترتيب الإيرادات":13},{"الفرع":"الرائد للسجاد الراقي الدواس","الإيرادات":808719.02,"تكلفة المبيعات":-603112.97,"مجمل الربح":205606.05,"هامش مجمل الربح":0.2542,"المصاريف التشغيلية":-223117.84,"الربح التشغيلي":-17511.79,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":-17511.79,"هامش صافي الربح":-0.0217,"ترتيب الربحية":18,"ترتيب الإيرادات":16},{"الفرع":"الضبيبي للاثاث شارع الحج","الإيرادات":399344.92,"تكلفة المبيعات":-267492.6,"مجمل الربح":131852.32,"هامش مجمل الربح":0.3302,"المصاريف التشغيلية":-235592.03,"الربح التشغيلي":-103739.71,"إيرادات/مصروفات أخرى":0.0,"صافي الربح":-103739.71,"هامش صافي الربح":-0.2598,"ترتيب الربحية":19,"ترتيب الإيرادات":18}],"expenses":[{"اسم الحساب":"مصاريف الرئيسي","القيمة":4427381.54,"النسبة":0.43068},{"اسم الحساب":"مصروف ايجارات","القيمة":2072293.44,"النسبة":0.20158},{"اسم الحساب":"مصروفات الرواتب الاساسية","القيمة":1534423.31,"النسبة":0.14926},{"اسم الحساب":"مصروف الاجر الاضافي","القيمة":429190.41,"النسبة":0.04175},{"اسم الحساب":"مصروفات كهرباء","القيمة":268711.2,"النسبة":0.02614},{"اسم الحساب":"تركيب موكيت","القيمة":235363.0,"النسبة":0.0229},{"اسم الحساب":"مصاريف عمولات","القيمة":181673.51,"النسبة":0.01767},{"اسم الحساب":"مصروفات مستودع الأثاث","القيمة":178034.55,"النسبة":0.01732},{"اسم الحساب":"مصروفات التامينات الإجتماعية","القيمة":147131.79,"النسبة":0.01431},{"اسم الحساب":"مصروفات بوفية","القيمة":108983.33,"النسبة":0.0106},{"اسم الحساب":"مصروفات رسوم حكومي...","القيمة":94349.1,"النسبة":0.00918},{"اسم الحساب":"مصروف رسوم تابي وتمارا","القيمة":88774.82,"النسبة":0.00864},{"اسم الحساب":"مصروفات مستودع الموكيت وملكان مع الخياطة","القيمة":67105.42,"النسبة":0.00653},{"اسم الحساب":"مصروفات انارة ونجف","القيمة":64532.35,"النسبة":0.00628},{"اسم الحساب":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":51991.16,"النسبة":0.00506}],"income":[{"البند":"الإيرادات","القيمة":36498415.24,"النسبة":1.0},{"البند":"تكلفة المبيعات","القيمة":-25907181.97,"النسبة":-0.7098},{"البند":"مجمل الربح","القيمة":10591233.27,"النسبة":0.2902},{"البند":"المصاريف التشغيلية","القيمة":-10280015.47,"النسبة":-0.2817},{"البند":"الربح التشغيلي","القيمة":311217.8,"النسبة":0.0085},{"البند":"صافي الربح","القيمة":311525.38,"النسبة":0.008535}],"detailedBranches":[{"الفرع":"الرائد للسجاد الراقي الدواس","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":808919.37,"النسبة":1.0002477},{"القسم":"الإيرادات","البند":"خصم ممنوح","القيمة":-200.0,"النسبة":-0.0002473},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.14,"النسبة":-2e-07},{"القسم":"الإيرادات","البند":"خصم مكتسب","القيمة":-0.25,"النسبة":-3e-07},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.04,"النسبة":0.0},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":808719.02,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-603112.97,"النسبة":-0.7457633},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":205606.05,"النسبة":0.2542367},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-36900.0,"النسبة":-0.0456277},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-1660.16,"النسبة":-0.0020528},{"القسم":"المصاريف التشغيلية","البند":"مصروفات قرطاسية / مطبوعات / لوازم مكتب","القيمة":-373.91,"النسبة":-0.0004623},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-1988.25,"النسبة":-0.0024585},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-3206.96,"النسبة":-0.0039655},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-324.0,"النسبة":-0.0004006},{"القسم":"المصاريف التشغيلية","البند":"مصروفات أتعاب ومكافآت","القيمة":-140.0,"النسبة":-0.0001731},{"القسم":"المصاريف التشغيلية","البند":"مصروفات صيانة أجهزة وصيانة عامة","القيمة":-710.0,"النسبة":-0.0008779},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم بنكية","القيمة":-343.41,"النسبة":-0.0004246},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-866.0,"النسبة":-0.0010708},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-1460.0,"النسبة":-0.0018053},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-10329.5,"النسبة":-0.0127727},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-82400.04,"النسبة":-0.1018896},{"القسم":"المصاريف التشغيلية","البند":"مصروفات تجديد اقامات","القيمة":-2425.0,"النسبة":-0.0029986},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-2251.27,"النسبة":-0.0027837},{"القسم":"المصاريف التشغيلية","البند":"مصروف دعاية واعلان وتسويق","القيمة":-7273.05,"النسبة":-0.0089933},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-1323.49,"النسبة":-0.0016365},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-47.86,"النسبة":-5.92e-05},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-66410.72,"النسبة":-0.0821184},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الموكيت وملكان مع الخياطة","القيمة":-2684.22,"النسبة":-0.0033191},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-223117.84,"النسبة":-0.2758904},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":-17511.79,"النسبة":-0.0216537},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":-17511.79,"النسبة":-0.0216537}]},{"الفرع":"الضبيبي للأثاث والانارة بن دايل","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":638550.98,"النسبة":0.9999698},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.35,"النسبة":-5e-07},{"القسم":"الإيرادات","البند":"خصم مكتسب","القيمة":19.59,"النسبة":3.07e-05},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.03,"النسبة":0.0},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":638570.25,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-430025.74,"النسبة":-0.6734196},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":208544.51,"النسبة":0.3265804},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-42500.0,"النسبة":-0.0665549},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-2173.52,"النسبة":-0.0034037},{"القسم":"المصاريف التشغيلية","البند":"مصروفات محروقات / تأمين سيارات","القيمة":-50.0,"النسبة":-7.83e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروفات قرطاسية / مطبوعات / لوازم مكتب","القيمة":-2941.74,"النسبة":-0.0046068},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-465.0,"النسبة":-0.0007282},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-6889.65,"النسبة":-0.0107892},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-720.11,"النسبة":-0.0011277},{"القسم":"المصاريف التشغيلية","البند":"مصروفات صيانة أجهزة وصيانة عامة","القيمة":-1111.5,"النسبة":-0.0017406},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم بنكية","القيمة":-166.67,"النسبة":-0.000261},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-946.0,"النسبة":-0.0014814},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-5014.47,"النسبة":-0.0078527},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-9489.91,"النسبة":-0.0148612},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-24999.96,"النسبة":-0.0391499},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-2845.1,"النسبة":-0.0044554},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-1115.0,"النسبة":-0.0017461},{"القسم":"المصاريف التشغيلية","البند":"مصروف دعاية واعلان وتسويق","القيمة":-4860.01,"النسبة":-0.0076108},{"القسم":"المصاريف التشغيلية","البند":"مصروفات انارة ونجف","القيمة":-490.18,"النسبة":-0.0007676},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-1683.01,"النسبة":-0.0026356},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-1694.67,"النسبة":-0.0026539},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-66410.72,"النسبة":-0.1039991},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الأشجار","القيمة":-1649.73,"النسبة":-0.0025835},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الأثاث","القيمة":-17803.45,"النسبة":-0.0278802},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-196020.41,"النسبة":-0.3069677},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":12524.1,"النسبة":0.0196127},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":12524.1,"النسبة":0.0196127}]},{"الفرع":"الضبيبي للسجاد الدواس","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":1634774.15,"النسبة":1.0000002},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.47,"النسبة":-3e-07},{"القسم":"الإيرادات","البند":"خصم مكتسب","القيمة":0.01,"النسبة":0.0},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.2,"النسبة":1e-07},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":1634773.89,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-1128000.88,"النسبة":-0.6900042},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":506773.01,"النسبة":0.3099958},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-108750.0,"النسبة":-0.066523},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-2551.76,"النسبة":-0.0015609},{"القسم":"المصاريف التشغيلية","البند":"مصروفات قرطاسية / مطبوعات / لوازم مكتب","القيمة":-170.04,"النسبة":-0.000104},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-7262.5,"النسبة":-0.0044425},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-3741.96,"النسبة":-0.002289},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-185.0,"النسبة":-0.0001132},{"القسم":"المصاريف التشغيلية","البند":"مصروفات أتعاب ومكافآت","القيمة":-663.0,"النسبة":-0.0004056},{"القسم":"المصاريف التشغيلية","البند":"مصروفات صيانة أجهزة وصيانة عامة","القيمة":-4.0,"النسبة":-2.4e-06},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم بنكية","القيمة":-788.05,"النسبة":-0.0004821},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-11124.0,"النسبة":-0.0068046},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-603.41,"النسبة":-0.0003691},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-23667.59,"النسبة":-0.0144776},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-82400.04,"النسبة":-0.0504045},{"القسم":"المصاريف التشغيلية","البند":"مصروف سكن / إجازة / سفر / بدل مظهر","القيمة":-2640.0,"النسبة":-0.0016149},{"القسم":"المصاريف التشغيلية","البند":"مصروف الاجر الاضافي","القيمة":-21600.0,"النسبة":-0.0132128},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-6620.24,"النسبة":-0.0040496},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-480.0,"النسبة":-0.0002936},{"القسم":"المصاريف التشغيلية","البند":"تركيب موكيت","القيمة":-350.0,"النسبة":-0.0002141},{"القسم":"المصاريف التشغيلية","البند":"مصروف دعاية واعلان وتسويق","القيمة":-2036.96,"النسبة":-0.001246},{"القسم":"المصاريف التشغيلية","البند":"مصروفات انارة ونجف","القيمة":-750.0,"النسبة":-0.0004588},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-5688.38,"النسبة":-0.0034796},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-221369.08,"النسبة":-0.1354127},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الموكيت وملكان مع الخياطة","القيمة":-2684.22,"النسبة":-0.001642},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-506130.22,"النسبة":-0.3096026},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":642.79,"النسبة":0.0003932},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":642.79,"النسبة":0.0003932}]},{"الفرع":"التميز للسجاد","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":2499140.46,"النسبة":0.9999965},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.36,"النسبة":-1e-07},{"القسم":"الإيرادات","البند":"خصم مكتسب","القيمة":8.91,"النسبة":3.6e-06},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.17,"النسبة":1e-07},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":2499149.18,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-1659278.11,"النسبة":-0.6639372},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":839871.07,"النسبة":0.3360628},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-138064.33,"النسبة":-0.0552445},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-2199.42,"النسبة":-0.0008801},{"القسم":"المصاريف التشغيلية","البند":"مصروفات محروقات / تأمين سيارات","القيمة":-50.0,"النسبة":-2e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروفات قرطاسية / مطبوعات / لوازم مكتب","القيمة":-1051.74,"النسبة":-0.0004208},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-2504.0,"النسبة":-0.0010019},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-5400.13,"النسبة":-0.0021608},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-1090.69,"النسبة":-0.0004364},{"القسم":"المصاريف التشغيلية","البند":"مصروفات صيانة أجهزة وصيانة عامة","القيمة":-190.0,"النسبة":-7.6e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم بنكية","القيمة":-855.88,"النسبة":-0.0003425},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-13114.4,"النسبة":-0.0052475},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-3888.7,"النسبة":-0.001556},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-17071.39,"النسبة":-0.0068309},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-129999.96,"النسبة":-0.0520177},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-8971.79,"النسبة":-0.0035899},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-3392.5,"النسبة":-0.0013575},{"القسم":"المصاريف التشغيلية","البند":"مصروف دعاية واعلان وتسويق","القيمة":-43.48,"النسبة":-1.74e-05},{"القسم":"المصاريف التشغيلية","البند":"تركيب اثاث","القيمة":-1250.0,"النسبة":-0.0005002},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-6330.27,"النسبة":-0.002533},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-189.96,"النسبة":-7.6e-05},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-442738.15,"النسبة":-0.1771556},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الموكيت وملكان مع الخياطة","القيمة":-4026.33,"النسبة":-0.0016111},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-782423.12,"النسبة":-0.3130758},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":57447.95,"النسبة":0.022987},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":57447.95,"النسبة":0.022987}]},{"الفرع":"الضبيبي للسجاد العمرة","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":2812056.58,"النسبة":1.0000004},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-1.31,"النسبة":-5e-07},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.2,"النسبة":1e-07},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":2812055.47,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-1922319.76,"النسبة":-0.6835995},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":889735.71,"النسبة":0.3164005},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-112801.82,"النسبة":-0.0401137},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-1808.43,"النسبة":-0.0006431},{"القسم":"المصاريف التشغيلية","البند":"مصروفات قرطاسية / مطبوعات / لوازم مكتب","القيمة":-543.91,"النسبة":-0.0001934},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-9512.5,"النسبة":-0.0033828},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-11746.3,"النسبة":-0.0041771},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-1336.48,"النسبة":-0.0004753},{"القسم":"المصاريف التشغيلية","البند":"مصروفات صيانة أجهزة وصيانة عامة","القيمة":-250.0,"النسبة":-8.89e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم بنكية","القيمة":-1280.41,"النسبة":-0.0004553},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-12623.16,"النسبة":-0.0044889},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-5666.57,"النسبة":-0.0020151},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-11797.26,"النسبة":-0.0041952},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-48875.01,"النسبة":-0.0173805},{"القسم":"المصاريف التشغيلية","البند":"مصروف سكن / إجازة / سفر / بدل مظهر","القيمة":-323.0,"النسبة":-0.0001149},{"القسم":"المصاريف التشغيلية","البند":"مصروف الاجر الاضافي","القيمة":-20800.0,"النسبة":-0.0073967},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-10955.88,"النسبة":-0.003896},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-1478.5,"النسبة":-0.0005258},{"القسم":"المصاريف التشغيلية","البند":"مصروف دعاية واعلان وتسويق","القيمة":-10778.89,"النسبة":-0.0038331},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-9942.18,"النسبة":-0.0035356},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-93.5,"النسبة":-3.32e-05},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-531285.78,"النسبة":-0.1889315},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الموكيت وملكان مع الخياطة","القيمة":-6039.49,"النسبة":-0.0021477},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-809939.07,"النسبة":-0.2880239},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":79796.64,"النسبة":0.0283766},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":79796.64,"النسبة":0.0283766}]},{"الفرع":"الضبيبي للمفروشات بن دايل","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":1768850.44,"النسبة":0.9999945},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.22,"النسبة":-1e-07},{"القسم":"الإيرادات","البند":"خصم مكتسب","القيمة":9.9,"النسبة":5.6e-06},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.06,"النسبة":0.0},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":1768860.18,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-1355537.28,"النسبة":-0.7663338},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":413322.9,"النسبة":0.2336662},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-105380.0,"النسبة":-0.0595751},{"القسم":"المصاريف التشغيلية","البند":"مصروفات تذاكر  نقل / إنتقالات","القيمة":-25.0,"النسبة":-1.41e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-2275.29,"النسبة":-0.0012863},{"القسم":"المصاريف التشغيلية","البند":"مصروفات محروقات / تأمين سيارات","القيمة":-70.0,"النسبة":-3.96e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-4592.5,"النسبة":-0.0025963},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-3227.0,"النسبة":-0.0018243},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-1416.16,"النسبة":-0.0008006},{"القسم":"المصاريف التشغيلية","البند":"مصروفات صيانة أجهزة وصيانة عامة","القيمة":-1126.0,"النسبة":-0.0006366},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم بنكية","القيمة":-652.35,"النسبة":-0.0003688},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-11627.06,"النسبة":-0.0065732},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-1010.0,"النسبة":-0.000571},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-26143.34,"النسبة":-0.0147798},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-99999.96,"النسبة":-0.0565336},{"القسم":"المصاريف التشغيلية","البند":"مصروفات تجديد اقامات","القيمة":-162.0,"النسبة":-9.16e-05},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-7877.75,"النسبة":-0.0044536},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-3405.0,"النسبة":-0.001925},{"القسم":"المصاريف التشغيلية","البند":"تركيب موكيت","القيمة":-5275.0,"النسبة":-0.0029821},{"القسم":"المصاريف التشغيلية","البند":"مصروف دعاية واعلان وتسويق","القيمة":-4816.52,"النسبة":-0.002723},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-4823.42,"النسبة":-0.0027269},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-65.22,"النسبة":-3.69e-05},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-110684.54,"النسبة":-0.0625739},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الموكيت وملكان مع الخياطة","القيمة":-4026.33,"النسبة":-0.0022762},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-398680.43,"النسبة":-0.2253883},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":14642.47,"النسبة":0.0082779},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":14642.47,"النسبة":0.0082779}]},{"الفرع":"الرائد للسجاد بن دايل","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":2586422.07,"النسبة":0.9999981},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.33,"النسبة":-1e-07},{"القسم":"الإيرادات","البند":"خصم مكتسب","القيمة":5.21,"النسبة":2e-06},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.13,"النسبة":1e-07},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":2586427.08,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-1854196.09,"النسبة":-0.7168948},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":732230.99,"النسبة":0.2831052},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-72400.0,"النسبة":-0.0279923},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-3688.65,"النسبة":-0.0014262},{"القسم":"المصاريف التشغيلية","البند":"مصروفات قرطاسية / مطبوعات / لوازم مكتب","القيمة":-373.91,"النسبة":-0.0001446},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-5342.5,"النسبة":-0.0020656},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-6447.15,"النسبة":-0.0024927},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-709.0,"النسبة":-0.0002741},{"القسم":"المصاريف التشغيلية","البند":"مصروفات صيانة أجهزة وصيانة عامة","القيمة":-2660.0,"النسبة":-0.0010284},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-1829.84,"النسبة":-0.0007075},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-2290.05,"النسبة":-0.0008854},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-16275.28,"النسبة":-0.0062926},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-99999.96,"النسبة":-0.0386634},{"القسم":"المصاريف التشغيلية","البند":"مصروفات تجديد اقامات","القيمة":-2587.0,"النسبة":-0.0010002},{"القسم":"المصاريف التشغيلية","البند":"مصروف الاجر الاضافي","القيمة":-12000.0,"النسبة":-0.0046396},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-11804.07,"النسبة":-0.0045639},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-3700.0,"النسبة":-0.0014305},{"القسم":"المصاريف التشغيلية","البند":"تركيب موكيت","القيمة":-10865.0,"النسبة":-0.0042008},{"القسم":"المصاريف التشغيلية","البند":"مصروف دعاية واعلان وتسويق","القيمة":-43.48,"النسبة":-1.68e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-887.08,"النسبة":-0.000343},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-643.3,"النسبة":-0.0002487},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-442738.15,"النسبة":-0.1711775},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الموكيت وملكان مع الخياطة","القيمة":-6710.54,"النسبة":-0.0025945},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-703994.96,"النسبة":-0.2721882},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":28236.03,"النسبة":0.010917},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":28236.03,"النسبة":0.010917}]},{"الفرع":"قمر للمفروشات الدواس","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":2192314.25,"النسبة":1.0000001},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.44,"النسبة":-2e-07},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.15,"النسبة":1e-07},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":2192313.96,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-1659804.22,"النسبة":-0.7571015},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":532509.74,"النسبة":0.2428985},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-104939.32,"النسبة":-0.0478669},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-2612.01,"النسبة":-0.0011914},{"القسم":"المصاريف التشغيلية","البند":"مصروفات قرطاسية / مطبوعات / لوازم مكتب","القيمة":-86.96,"النسبة":-3.97e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-3888.0,"النسبة":-0.0017735},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-2450.96,"النسبة":-0.001118},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-1519.85,"النسبة":-0.0006933},{"القسم":"المصاريف التشغيلية","البند":"مصروفات صيانة أجهزة وصيانة عامة","القيمة":-170.0,"النسبة":-7.75e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم بنكية","القيمة":-1009.67,"النسبة":-0.0004605},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-12718.4,"النسبة":-0.0058014},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-3040.0,"النسبة":-0.0013867},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-6136.93,"النسبة":-0.0027993},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-197899.92,"النسبة":-0.0902699},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-9271.31,"النسبة":-0.004229},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-80.0,"النسبة":-3.65e-05},{"القسم":"المصاريف التشغيلية","البند":"تركيب موكيت","القيمة":-8050.0,"النسبة":-0.0036719},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-5944.91,"النسبة":-0.0027117},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-124.35,"النسبة":-5.67e-05},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-154958.35,"النسبة":-0.0706826},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الموكيت وملكان مع الخياطة","القيمة":-6710.54,"النسبة":-0.0030609},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-521611.48,"النسبة":-0.2379274},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":10898.26,"النسبة":0.0049711},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":10898.26,"النسبة":0.0049711}]},{"الفرع":"الضبيبي للمفروشات الدواس","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":2153488.77,"النسبة":1.0},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.16,"النسبة":-1e-07},{"القسم":"الإيرادات","البند":"خصم مكتسب","القيمة":0.02,"النسبة":0.0},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.08,"النسبة":0.0},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":2153488.71,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-1638721.82,"النسبة":-0.7609614},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":514766.89,"النسبة":0.2390386},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-56700.0,"النسبة":-0.0263294},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-1640.16,"النسبة":-0.0007616},{"القسم":"المصاريف التشغيلية","البند":"مصروفات قرطاسية / مطبوعات / لوازم مكتب","القيمة":-373.93,"النسبة":-0.0001736},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-7324.0,"النسبة":-0.003401},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-2399.46,"النسبة":-0.0011142},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-1990.78,"النسبة":-0.0009244},{"القسم":"المصاريف التشغيلية","البند":"مصروفات صيانة أجهزة وصيانة عامة","القيمة":-1215.0,"النسبة":-0.0005642},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-1107.68,"النسبة":-0.0005144},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-3158.41,"النسبة":-0.0014666},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-5937.17,"النسبة":-0.002757},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-188133.6,"النسبة":-0.0873622},{"القسم":"المصاريف التشغيلية","البند":"مصروفات تجديد اقامات","القيمة":-2425.0,"النسبة":-0.0011261},{"القسم":"المصاريف التشغيلية","البند":"مصروف سكن / إجازة / سفر / بدل مظهر","القيمة":-2200.0,"النسبة":-0.0010216},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-8660.84,"النسبة":-0.0040218},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-1747.0,"النسبة":-0.0008112},{"القسم":"المصاريف التشغيلية","البند":"تركيب موكيت","القيمة":-14970.0,"النسبة":-0.0069515},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-1939.82,"النسبة":-0.0009008},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-98.27,"النسبة":-4.56e-05},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-199232.17,"النسبة":-0.092516},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الموكيت وملكان مع الخياطة","القيمة":-6710.54,"النسبة":-0.0031161},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-507963.83,"النسبة":-0.2358795},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":6803.06,"النسبة":0.0031591},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":6803.06,"النسبة":0.0031591}]},{"الفرع":"قمر للمفروشات العمرة","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":1969587.07,"النسبة":1.0000001},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.33,"النسبة":-2e-07},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.14,"النسبة":1e-07},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":1969586.88,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-1417117.97,"النسبة":-0.7195001},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":552468.91,"النسبة":0.2804999},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-60900.0,"النسبة":-0.0309202},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-1757.32,"النسبة":-0.0008922},{"القسم":"المصاريف التشغيلية","البند":"مصروفات محروقات / تأمين سيارات","القيمة":-50.0,"النسبة":-2.54e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-10404.0,"النسبة":-0.0052823},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-3201.58,"النسبة":-0.0016255},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-284.56,"النسبة":-0.0001445},{"القسم":"المصاريف التشغيلية","البند":"مصروفات صيانة أجهزة وصيانة عامة","القيمة":-520.0,"النسبة":-0.000264},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم بنكية","القيمة":-389.62,"النسبة":-0.0001978},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-1662.37,"النسبة":-0.000844},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-7240.5,"النسبة":-0.0036762},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-7567.73,"النسبة":-0.0038423},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-47625.03,"النسبة":-0.0241802},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مكافئات وحوافز موسمية","القيمة":-2300.0,"النسبة":-0.0011678},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-7690.48,"النسبة":-0.0039046},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-330.0,"النسبة":-0.0001675},{"القسم":"المصاريف التشغيلية","البند":"تركيب موكيت","القيمة":-3260.0,"النسبة":-0.0016552},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-6398.77,"النسبة":-0.0032488},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-20.0,"النسبة":-1.02e-05},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-376327.43,"النسبة":-0.1910692},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الموكيت وملكان مع الخياطة","القيمة":-6710.54,"النسبة":-0.0034071},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-544639.93,"النسبة":-0.276525},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":7828.98,"النسبة":0.0039749},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":7828.98,"النسبة":0.0039749}]},{"الفرع":"الضبيبي للمفروشات العمرة","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":2895363.93,"النسبة":1.0000001},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.59,"النسبة":-2e-07},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.2,"النسبة":1e-07},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":2895363.54,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-2104552.07,"النسبة":-0.7268697},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":790811.47,"النسبة":0.2731303},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-113189.32,"النسبة":-0.0390933},{"القسم":"المصاريف التشغيلية","البند":"مصروفات تذاكر  نقل / إنتقالات","القيمة":-15.0,"النسبة":-5.2e-06},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-1757.32,"النسبة":-0.0006069},{"القسم":"المصاريف التشغيلية","البند":"مصروفات محروقات / تأمين سيارات","القيمة":-50.0,"النسبة":-1.73e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-3254.0,"النسبة":-0.0011239},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-3165.17,"النسبة":-0.0010932},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-565.2,"النسبة":-0.0001952},{"القسم":"المصاريف التشغيلية","البند":"مصروفات صيانة أجهزة وصيانة عامة","القيمة":-305.0,"النسبة":-0.0001053},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم بنكية","القيمة":-971.99,"النسبة":-0.0003357},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-12601.74,"النسبة":-0.0043524},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-7693.41,"النسبة":-0.0026571},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-11578.64,"النسبة":-0.003999},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-67125.0,"النسبة":-0.0231836},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-11301.33,"النسبة":-0.0039033},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-460.0,"النسبة":-0.0001589},{"القسم":"المصاريف التشغيلية","البند":"تركيب موكيت","القيمة":-9731.0,"النسبة":-0.0033609},{"القسم":"المصاريف التشغيلية","البند":"مصروف دعاية واعلان وتسويق","القيمة":-43.48,"النسبة":-1.5e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-5501.19,"النسبة":-0.0019},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-409.13,"النسبة":-0.0001413},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-487011.97,"النسبة":-0.1682041},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الموكيت وملكان مع الخياطة","القيمة":-6710.54,"النسبة":-0.0023177},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-743440.43,"النسبة":-0.2567693},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":47371.04,"النسبة":0.016361},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":47371.04,"النسبة":0.016361}]},{"الفرع":"الرئيسي مع المتجر والخياطة","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":281579.42,"النسبة":1.0},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":281579.42,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-251974.17,"النسبة":-0.89486},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":29605.25,"النسبة":0.10514},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-22136.91,"النسبة":-0.0786169},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-22136.91,"النسبة":-0.0786169},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":7468.34,"النسبة":0.026523},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":7468.34,"النسبة":0.026523}]},{"الفرع":"العز للمفروشات والاثاث","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":941931.83,"النسبة":0.9999818},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.15,"النسبة":-2e-07},{"القسم":"الإيرادات","البند":"خصم مكتسب","القيمة":17.19,"النسبة":1.82e-05},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.06,"النسبة":1e-07},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":941948.93,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-580907.93,"النسبة":-0.6167085},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":361041.0,"النسبة":0.3832915},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-77222.0,"النسبة":-0.0819811},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-1159.67,"النسبة":-0.0012311},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-151.25,"النسبة":-0.0001606},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-3502.77,"النسبة":-0.0037186},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-613.18,"النسبة":-0.000651},{"القسم":"المصاريف التشغيلية","البند":"مصروفات صيانة أجهزة وصيانة عامة","القيمة":-165.0,"النسبة":-0.0001752},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم بنكية","القيمة":-647.5,"النسبة":-0.0006874},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-11184.64,"النسبة":-0.0118739},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-150.0,"النسبة":-0.0001592},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-8952.89,"النسبة":-0.0095046},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-150000.0,"النسبة":-0.1592443},{"القسم":"المصاريف التشغيلية","البند":"مصروف سكن / إجازة / سفر / بدل مظهر","القيمة":-3383.0,"النسبة":-0.0035915},{"القسم":"المصاريف التشغيلية","البند":"مصروف الاجر الاضافي","القيمة":-24000.0,"النسبة":-0.0254791},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-6224.63,"النسبة":-0.0066082},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-2745.0,"النسبة":-0.0029142},{"القسم":"المصاريف التشغيلية","البند":"مصروف دعاية واعلان وتسويق","القيمة":-43.48,"النسبة":-4.62e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-3581.83,"النسبة":-0.0038026},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-1828.0,"النسبة":-0.0019407},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-44273.82,"النسبة":-0.0470024},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الأشجار","القيمة":-1649.73,"النسبة":-0.0017514},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الأثاث","القيمة":-17803.45,"النسبة":-0.0189007},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-359281.84,"النسبة":-0.3814239},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":1759.16,"النسبة":0.0018676},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":1759.16,"النسبة":0.0018676}]},{"الفرع":"الضبيبي للأثاث العمرة","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":1690369.24,"النسبة":0.9999934},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.42,"النسبة":-2e-07},{"القسم":"الإيرادات","البند":"خصم مكتسب","القيمة":11.5,"النسبة":6.8e-06},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.06,"النسبة":0.0},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":1690380.38,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-1101258.65,"النسبة":-0.6514857},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":589121.73,"النسبة":0.3485143},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-110016.52,"النسبة":-0.0650839},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-1757.67,"النسبة":-0.0010398},{"القسم":"المصاريف التشغيلية","البند":"مصروفات محروقات / تأمين سيارات","القيمة":-50.0,"النسبة":-2.96e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروفات قرطاسية / مطبوعات / لوازم مكتب","القيمة":-1021.39,"النسبة":-0.0006042},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-11513.0,"النسبة":-0.0068109},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-5774.67,"النسبة":-0.0034162},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-806.0,"النسبة":-0.0004768},{"القسم":"المصاريف التشغيلية","البند":"مصروفات صيانة أجهزة وصيانة عامة","القيمة":-1297.0,"النسبة":-0.0007673},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم بنكية","القيمة":-503.51,"النسبة":-0.0002979},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-20859.58,"النسبة":-0.0123402},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-1495.5,"النسبة":-0.0008847},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-16967.83,"النسبة":-0.0100379},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-90000.0,"النسبة":-0.0532425},{"القسم":"المصاريف التشغيلية","البند":"مصروفات تجديد اقامات","القيمة":-2425.0,"النسبة":-0.0014346},{"القسم":"المصاريف التشغيلية","البند":"مصروف سكن / إجازة / سفر / بدل مظهر","القيمة":-521.0,"النسبة":-0.0003082},{"القسم":"المصاريف التشغيلية","البند":"مصروف الاجر الاضافي","القيمة":-76000.0,"النسبة":-0.0449603},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-10477.65,"النسبة":-0.0061984},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-2854.0,"النسبة":-0.0016884},{"القسم":"المصاريف التشغيلية","البند":"مصروف دعاية واعلان وتسويق","القيمة":-43.47,"النسبة":-2.57e-05},{"القسم":"المصاريف التشغيلية","البند":"تركيب اثاث","القيمة":-2170.0,"النسبة":-0.0012837},{"القسم":"المصاريف التشغيلية","البند":"مصروفات انارة ونجف","القيمة":-14217.18,"النسبة":-0.0084106},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-5925.6,"النسبة":-0.0035055},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-4884.33,"النسبة":-0.0028895},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-177095.26,"النسبة":-0.1047665},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الأشجار","القيمة":-2474.6,"النسبة":-0.0014639},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الأثاث","القيمة":-26705.18,"النسبة":-0.0157983},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-587855.94,"النسبة":-0.3477655},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":1265.79,"النسبة":0.0007488},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":1265.79,"النسبة":0.0007488}]},{"الفرع":"الضبيبي للأثاث الجموم","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":1382891.91,"النسبة":0.9999924},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.38,"النسبة":-3e-07},{"القسم":"الإيرادات","البند":"خصم مكتسب","القيمة":10.84,"النسبة":7.8e-06},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.05,"النسبة":0.0},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":1382902.42,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-887190.24,"النسبة":-0.6415422},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":495712.18,"النسبة":0.3584578},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-95730.0,"النسبة":-0.069224},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-2061.9,"النسبة":-0.001491},{"القسم":"المصاريف التشغيلية","البند":"مصروفات قرطاسية / مطبوعات / لوازم مكتب","القيمة":-758.66,"النسبة":-0.0005486},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-2569.1,"النسبة":-0.0018578},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-3077.5,"النسبة":-0.0022254},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-584.0,"النسبة":-0.0004223},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم بنكية","القيمة":-1746.55,"النسبة":-0.001263},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-11255.76,"النسبة":-0.0081392},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-2285.0,"النسبة":-0.0016523},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-19849.81,"النسبة":-0.0143537},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-130434.96,"النسبة":-0.0943197},{"القسم":"المصاريف التشغيلية","البند":"مصروفات تجديد اقامات","القيمة":-2425.0,"النسبة":-0.0017536},{"القسم":"المصاريف التشغيلية","البند":"مصروف سكن / إجازة / سفر / بدل مظهر","القيمة":-12190.0,"النسبة":-0.0088148},{"القسم":"المصاريف التشغيلية","البند":"مصروف الاجر الاضافي","القيمة":-24000.0,"النسبة":-0.0173548},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-7462.79,"النسبة":-0.0053965},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-1995.0,"النسبة":-0.0014426},{"القسم":"المصاريف التشغيلية","البند":"مصروف دعاية واعلان وتسويق","القيمة":-3286.96,"النسبة":-0.0023769},{"القسم":"المصاريف التشغيلية","البند":"تركيب اثاث","القيمة":-890.0,"النسبة":-0.0006436},{"القسم":"المصاريف التشغيلية","البند":"مصروفات انارة ونجف","القيمة":-12303.43,"النسبة":-0.0088968},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-14334.0,"النسبة":-0.0103652},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-3510.17,"النسبة":-0.0025383},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-110684.54,"النسبة":-0.0800379},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الأشجار","القيمة":-2474.6,"النسبة":-0.0017894},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الأثاث","القيمة":-26705.18,"النسبة":-0.019311},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-492614.91,"النسبة":-0.3562181},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":3097.27,"النسبة":0.0022397},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":3097.27,"النسبة":0.0022397}]},{"الفرع":"الضبيبي للاثاث شارع الحج","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":399343.82,"النسبة":0.9999972},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.11,"النسبة":-3e-07},{"القسم":"الإيرادات","البند":"خصم مكتسب","القيمة":1.18,"النسبة":3e-06},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.03,"النسبة":1e-07},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":399344.92,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-267492.6,"النسبة":-0.6698285},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":131852.32,"النسبة":0.3301715},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-33200.0,"النسبة":-0.0831362},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-3098.38,"النسبة":-0.0077587},{"القسم":"المصاريف التشغيلية","البند":"مصروفات قرطاسية / مطبوعات / لوازم مكتب","القيمة":-480.0,"النسبة":-0.001202},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-6463.0,"النسبة":-0.016184},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-3591.9,"النسبة":-0.0089945},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-301.0,"النسبة":-0.0007537},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم بنكية","القيمة":-67.9,"النسبة":-0.00017},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-669.6,"النسبة":-0.0016767},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-4175.0,"النسبة":-0.0104546},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-17449.32,"النسبة":-0.0436949},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-99999.96,"النسبة":-0.25041},{"القسم":"المصاريف التشغيلية","البند":"مصروفات تجديد اقامات","القيمة":-2425.0,"النسبة":-0.0060724},{"القسم":"المصاريف التشغيلية","البند":"مصروف سكن / إجازة / سفر / بدل مظهر","القيمة":-1755.0,"النسبة":-0.0043947},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-2531.97,"النسبة":-0.0063403},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-560.0,"النسبة":-0.0014023},{"القسم":"المصاريف التشغيلية","البند":"مصروف دعاية واعلان وتسويق","القيمة":-43.48,"النسبة":-0.0001089},{"القسم":"المصاريف التشغيلية","البند":"مصروفات انارة ونجف","القيمة":-11910.43,"النسبة":-0.0298249},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-305.33,"النسبة":-0.0007646},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-2290.94,"النسبة":-0.0057367},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-44273.82,"النسبة":-0.1108661},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-235592.03,"النسبة":-0.5899462},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":-103739.71,"النسبة":-0.2597747},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":-103739.71,"النسبة":-0.2597747}]},{"الفرع":"العز للاثاث الدواس","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":3429079.91,"النسبة":0.9999757},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.61,"النسبة":-2e-07},{"القسم":"الإيرادات","البند":"خصم مكتسب","القيمة":83.81,"النسبة":2.44e-05},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.08,"النسبة":0.0},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":3429163.19,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-2452961.96,"النسبة":-0.7153238},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":976201.23,"النسبة":0.2846762},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-124075.0,"النسبة":-0.0361823},{"القسم":"المصاريف التشغيلية","البند":"مصروفات تذاكر  نقل / إنتقالات","القيمة":-1000.0,"النسبة":-0.0002916},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-2719.99,"النسبة":-0.0007932},{"القسم":"المصاريف التشغيلية","البند":"مصروفات قرطاسية / مطبوعات / لوازم مكتب","القيمة":-480.0,"النسبة":-0.00014},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-9652.8,"النسبة":-0.0028149},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-1171.97,"النسبة":-0.0003418},{"القسم":"المصاريف التشغيلية","البند":"مصروفات صيانة أجهزة وصيانة عامة","القيمة":-4452.62,"النسبة":-0.0012985},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم بنكية","القيمة":-1652.91,"النسبة":-0.000482},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-12097.0,"النسبة":-0.0035277},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-206.07,"النسبة":-6.01e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-33005.01,"النسبة":-0.0096248},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-232400.04,"النسبة":-0.0677716},{"القسم":"المصاريف التشغيلية","البند":"مصروف سكن / إجازة / سفر / بدل مظهر","القيمة":-3051.0,"النسبة":-0.0008897},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجار معدات","القيمة":-200.0,"النسبة":-5.83e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروف الاجر الاضافي","القيمة":-152390.41,"النسبة":-0.0444395},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-22194.5,"النسبة":-0.0064723},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-11972.0,"النسبة":-0.0034912},{"القسم":"المصاريف التشغيلية","البند":"مصروف دعاية واعلان وتسويق","القيمة":-400.88,"النسبة":-0.0001169},{"القسم":"المصاريف التشغيلية","البند":"تركيب اثاث","القيمة":-5440.0,"النسبة":-0.0015864},{"القسم":"المصاريف التشغيلية","البند":"مصروفات انارة ونجف","القيمة":-23295.93,"النسبة":-0.0067935},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-8228.57,"النسبة":-0.0023996},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-16166.14,"النسبة":-0.0047143},{"القسم":"المصاريف التشغيلية","البند":"مصروف انتاج اشجار","القيمة":-200.0,"النسبة":-5.83e-05},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-221369.08,"النسبة":-0.0645548},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الأشجار","القيمة":-4949.2,"النسبة":-0.0014433},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الأثاث","القيمة":-53410.36,"النسبة":-0.0155753},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-946181.48,"النسبة":-0.275922},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":30019.75,"النسبة":0.0087543},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":30019.75,"النسبة":0.0087543}]},{"الفرع":"الضبيبي ولي العهد","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":2606730.3,"النسبة":0.9999897},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.55,"النسبة":-2e-07},{"القسم":"الإيرادات","البند":"خصم مكتسب","القيمة":27.22,"النسبة":1.04e-05},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.24,"النسبة":1e-07},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":2606757.24,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-1690105.02,"النسبة":-0.6483554},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":916652.22,"النسبة":0.3516446},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-109655.0,"النسبة":-0.0420657},{"القسم":"المصاريف التشغيلية","البند":"مصروفات تذاكر  نقل / إنتقالات","القيمة":-120.0,"النسبة":-4.6e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروفات محروقات / تأمين سيارات","القيمة":-206.52,"النسبة":-7.92e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروفات قرطاسية / مطبوعات / لوازم مكتب","القيمة":-545.3,"النسبة":-0.0002092},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-16657.5,"النسبة":-0.0063901},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-26984.52,"النسبة":-0.0103518},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-1203.63,"النسبة":-0.0004617},{"القسم":"المصاريف التشغيلية","البند":"مصروفات صيانة أجهزة وصيانة عامة","القيمة":-5137.33,"النسبة":-0.0019708},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم بنكية","القيمة":-11793.51,"النسبة":-0.0045242},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-10202.56,"النسبة":-0.0039139},{"القسم":"المصاريف التشغيلية","البند":"مصروفات حراسة ونظافة ودفاع مدنى","القيمة":-2614.07,"النسبة":-0.0010028},{"القسم":"المصاريف التشغيلية","البند":"مصروفات كهرباء","القيمة":-26491.6,"النسبة":-0.0101627},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجارات","القيمة":-300000.0,"النسبة":-0.1150855},{"القسم":"المصاريف التشغيلية","البند":"مصروفات تجديد اقامات","القيمة":-2913.0,"النسبة":-0.0011175},{"القسم":"المصاريف التشغيلية","البند":"مصروف سكن / إجازة / سفر / بدل مظهر","القيمة":-5436.0,"النسبة":-0.0020853},{"القسم":"المصاريف التشغيلية","البند":"مصروف اشتراك البرامج المحاسبية","القيمة":-1123.55,"النسبة":-0.000431},{"القسم":"المصاريف التشغيلية","البند":"مصروف ايجار معدات","القيمة":-3760.0,"النسبة":-0.0014424},{"القسم":"المصاريف التشغيلية","البند":"مصروف الاجر الاضافي","القيمة":-98400.0,"النسبة":-0.037748},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-9596.18,"النسبة":-0.0036813},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-414.02,"النسبة":-0.0001588},{"القسم":"المصاريف التشغيلية","البند":"تركيب موكيت","القيمة":-7851.0,"النسبة":-0.0030118},{"القسم":"المصاريف التشغيلية","البند":"مصروف دعاية واعلان وتسويق","القيمة":-7140.88,"النسبة":-0.0027394},{"القسم":"المصاريف التشغيلية","البند":"مصروفات انارة ونجف","القيمة":-1565.2,"النسبة":-0.0006004},{"القسم":"المصاريف التشغيلية","البند":"مصروف رسوم تابي وتمارا","القيمة":-5936.97,"النسبة":-0.0022775},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-7655.26,"النسبة":-0.0029367},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-177095.26,"النسبة":-0.067937},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الموكيت وملكان مع الخياطة","القيمة":-6710.54,"النسبة":-0.0025743},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الأشجار","القيمة":-3299.46,"النسبة":-0.0012657},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الأثاث","القيمة":-35606.91,"النسبة":-0.0136595},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-886115.78,"النسبة":-0.3399303},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":30536.44,"النسبة":0.0117143},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":30536.41,"النسبة":0.0117143}]},{"الفرع":"شركة الضبيبي التجارية - قسم المشاريع","rows":[{"القسم":"الإيرادات","البند":"مبيعات","القيمة":3807179.75,"النسبة":1.0000392},{"القسم":"الإيرادات","البند":"خصم ممنوح","القيمة":157.6,"النسبة":4.14e-05},{"القسم":"الإيرادات","البند":"ربح فرق عملات","القيمة":-0.1,"النسبة":-0.0},{"القسم":"الإيرادات","البند":"خصم مكتسب","القيمة":0.88,"النسبة":2e-07},{"القسم":"الإيرادات","البند":"مصروف خسارة على الفرق العملات","القيمة":0.06,"النسبة":0.0},{"القسم":"إجمالي","البند":"اجمالي الدخل","القيمة":3807030.58,"النسبة":1},{"القسم":"تكلفة المبيعات","البند":"تكلفة البضاعة المباعة في التجارة","القيمة":-2902624.49,"النسبة":-0.7624379},{"القسم":"مجمل الربح","البند":"مجمل الربح","القيمة":904406.09,"النسبة":0.2375621},{"القسم":"المصاريف التشغيلية","البند":"مصروفات الرواتب الاساسية","القيمة":-32000.0,"النسبة":-0.0084055},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بريد / هاتف/انترنت","القيمة":-2112.23,"النسبة":-0.0005548},{"القسم":"المصاريف التشغيلية","البند":"مصروفات محروقات / تأمين سيارات","القيمة":-86.96,"النسبة":-2.28e-05},{"القسم":"المصاريف التشغيلية","البند":"مصروفات قرطاسية / مطبوعات / لوازم مكتب","القيمة":-12634.78,"النسبة":-0.0033188},{"القسم":"المصاريف التشغيلية","البند":"مصروفات رسوم حكومية / تأشيرات/ تعقيب / تصديقات","القيمة":-458.0,"النسبة":-0.0001203},{"القسم":"المصاريف التشغيلية","البند":"مصروفات بوفية / ضيافة / إعاشة / وجبات طعام","القيمة":-4522.85,"النسبة":-0.001188},{"القسم":"المصاريف التشغيلية","البند":"مصروفات علاجية وتامين طبى","القيمة":-500.0,"النسبة":-0.0001313},{"القسم":"المصاريف التشغيلية","البند":"مصروفات صيانة أجهزة وصيانة عامة","القيمة":-34.78,"النسبة":-9.1e-06},{"القسم":"المصاريف التشغيلية","البند":"مصروفات التامينات الإجتماعية","القيمة":-642.0,"النسبة":-0.0001686},{"القسم":"المصاريف التشغيلية","البند":"مصروفات تجديد اقامات","القيمة":-2425.0,"النسبة":-0.000637},{"القسم":"المصاريف التشغيلية","البند":"مصاريف عمولات","القيمة":-34935.73,"النسبة":-0.0091766},{"القسم":"المصاريف التشغيلية","البند":"توصيل بضاعة","القيمة":-5220.0,"النسبة":-0.0013711},{"القسم":"المصاريف التشغيلية","البند":"تركيب موكيت","القيمة":-175011.0,"النسبة":-0.0459705},{"القسم":"المصاريف التشغيلية","البند":"تركيب اثاث","القيمة":-2630.0,"النسبة":-0.0006908},{"القسم":"المصاريف التشغيلية","البند":"مصاريف مستلزمات المشتريات","القيمة":-394.13,"النسبة":-0.0001035},{"القسم":"المصاريف التشغيلية","البند":"مصاريف الرئيسي","القيمة":-531285.78,"النسبة":-0.1395539},{"القسم":"المصاريف التشغيلية","البند":"مصروفات مستودع الموكيت وملكان مع الخياطة","القيمة":-7381.6,"النسبة":-0.0019389},{"القسم":"إجمالي","البند":"إجمالي المصاريف التشغيلية","القيمة":-812274.84,"النسبة":-0.2133618},{"القسم":"الربح التشغيلي","البند":"الربح التشغيلي","القيمة":92131.25,"النسبة":0.0242003},{"القسم":"صافي الربح","البند":"صافي الربح","القيمة":92438.86,"النسبة":0.0242811}]}]};
+
+// ══════════════════════════════════════════════════
+// UTILITY FUNCTIONS
+// ══════════════════════════════════════════════════
+const D = DASHBOARD_DATA;
+const fmt = n => {
+  if (typeof n !== 'number') return n;
+  const abs = Math.abs(n);
+  if (abs >= 1e6) return (n/1e6).toLocaleString('en-US',{maximumFractionDigits:2}) + ' م';
+  return n.toLocaleString('en-US', {maximumFractionDigits: 0});
+};
+const fmtFull = n => typeof n === 'number' ? n.toLocaleString('en-US', {maximumFractionDigits: 0}) : n;
+const pct = n => (n * 100).toFixed(1) + '%';
+const short = (s, l=22) => s.length > l ? s.slice(0, l) + '…' : s;
+const clr = n => n >= 0 ? 'var(--emerald)' : 'var(--rose)';
+const cls = n => n >= 0 ? 'td-good' : 'td-bad';
+
+const COLORS = [
+  '#38bdf8','#e6b45a','#34d399','#fb7185',
+  '#a78bfa','#fbbf24','#06b6d4','#f472b6',
+  '#4ade80','#f97316','#818cf8','#2dd4bf'
+];
+
+// ══════════════════════════════════════════════════
+// NAVIGATION
+// ══════════════════════════════════════════════════
+const pageTitles = {
+  overview: 'التقرير المالي وفقاً للقوائم المالية',
+  kpis: 'مؤشرات الأداء الرئيسية',
+  branches: 'تحليل الفروع',
+  income: 'قائمة الدخل الموحدة',
+  expenses: 'تحليل المصروفات',
+  detail: 'القوائم التفصيلية',
+  insights: 'الرؤى والتوصيات'
+};
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => {
+    if (n.getAttribute('onclick') && n.getAttribute('onclick').includes(id))
+      n.classList.add('active');
+  });
+  document.getElementById('pageTitle').textContent = pageTitles[id] || id;
+  closeSidebar();
+  window.scrollTo(0, 0);
+}
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('show');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('show');
+}
+
+// ══════════════════════════════════════════════════
+// BAR CHART (horizontal)
+// ══════════════════════════════════════════════════
+function renderBarChart(containerId, rows, valueKey, nameKey, color, limit, showPct) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  const data = rows.slice(0, limit || rows.length);
+  const maxVal = Math.max(...data.map(r => Math.abs(r[valueKey])));
+  const totalForPct = rows.reduce((a,r) => a + Math.abs(r[valueKey]), 0);
+  
+  el.innerHTML = data.map((r, i) => {
+    const v = r[valueKey];
+    const pctW = maxVal ? (Math.abs(v) / maxVal * 100) : 0;
+    const pctShare = showPct ? ` (${(Math.abs(v)/totalForPct*100).toFixed(1)}%)` : '';
+    const barColor = typeof color === 'function' ? color(v) : (color || COLORS[i % COLORS.length]);
+    return `
+      <div class="bar-item">
+        <div class="bar-name" title="${r[nameKey]}">${short(r[nameKey] || '', 20)}</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:${pctW}%;background:${barColor}"></div>
+        </div>
+        <div class="bar-val" style="color:${barColor}">${fmt(v)}${pctShare}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ══════════════════════════════════════════════════
+// WATERFALL / BRIDGE CHART
+// ══════════════════════════════════════════════════
+function renderWaterfall(containerId, rows) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  const maxVal = Math.max(...rows.map(r => Math.abs(r['القيمة'])));
+  
+  el.innerHTML = rows.map(r => {
+    const v = r['القيمة'];
+    const w = maxVal ? (Math.abs(v) / maxVal * 95) : 0;
+    const isPositive = v >= 0;
+    const color = isPositive ? 'var(--emerald)' : 'var(--rose)';
+    const isTotal = r['البند'] === 'الإيرادات' || r['البند'] === 'صافي الربح' || r['البند'] === 'مجمل الربح' || r['البند'] === 'الربح التشغيلي';
+    return `
+      <div class="wfall-row">
+        <div class="wfall-label" style="${isTotal ? 'font-weight:700;color:var(--text)' : ''}">${r['البند']}</div>
+        <div class="wfall-bar-wrap">
+          <div class="wfall-bar" style="width:${w}%;background:${isTotal ? 'var(--gold)' : color}"></div>
+        </div>
+        <div class="wfall-val" style="color:${isTotal ? 'var(--gold)' : color}">${fmt(v)}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ══════════════════════════════════════════════════
+// REVENUE DISTRIBUTION (Horizontal proportional)
+// ══════════════════════════════════════════════════
+function renderRevenueDist(containerId, branches, limit) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  const sorted = [...branches].sort((a,b) => b['الإيرادات'] - a['الإيرادات']).slice(0, limit || 8);
+  const total = branches.reduce((a,b) => a + b['الإيرادات'], 0);
+  
+  el.innerHTML = sorted.map((b, i) => {
+    const p = b['الإيرادات'] / total;
+    return `
+      <div class="bar-item">
+        <div class="bar-name" title="${b['الفرع']}">${short(b['الفرع'], 18)}</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:${p*100}%;background:${COLORS[i % COLORS.length]}"></div>
+        </div>
+        <div class="bar-val" style="color:${COLORS[i % COLORS.length]}">${pct(p)}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ══════════════════════════════════════════════════
+// HERO STATS
+// ══════════════════════════════════════════════════
+function renderHeroStats() {
+  const s = D.summary;
+  const stats = [
+    { val: fmt(s['إجمالي الإيرادات']), lbl: 'إجمالي الإيرادات', cls: '' },
+    { val: fmt(s['صافي الربح']), lbl: 'صافي الربح', cls: 'good' },
+    { val: pct(s['هامش صافي الربح']), lbl: 'هامش صافي الربح', cls: 'warn' },
+    { val: s['عدد الفروع'].toString(), lbl: 'إجمالي الفروع', cls: '' },
+    { val: s['الفروع الرابحة'].toString(), lbl: 'فروع رابحة', cls: 'good' },
+    { val: s['الفروع الخاسرة'].toString(), lbl: 'فروع تحتاج مراجعة', cls: 'bad' },
+  ];
+  
+  const div = document.getElementById('heroStats');
+  let html = '';
+  stats.forEach((st, i) => {
+    if (i > 0) html += '<div class="hero-divider"></div>';
+    html += `<div class="hero-stat">
+      <div class="hero-stat-val ${st.cls}">${st.val}</div>
+      <div class="hero-stat-lbl">${st.lbl}</div>
+    </div>`;
+  });
+  div.innerHTML = html;
+}
+
+// ══════════════════════════════════════════════════
+// MAIN KPI CARDS
+// ══════════════════════════════════════════════════
+function renderMainKPIs(containerId) {
+  const s = D.summary;
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  
+  const cards = [
+    {
+      icon: '💰', iconCls: 'gold-ic', cardCls: 'gold-card',
+      lbl: 'إجمالي الإيرادات', val: fmt(s['إجمالي الإيرادات']),
+      valCls: 'c-gold', note: '100% من المبيعات الإجمالية',
+      progress: 100, progressColor: 'var(--gold)'
+    },
+    {
+      icon: '📈', iconCls: 'green-ic', cardCls: 'green-card',
+      lbl: 'مجمل الربح', val: fmt(s['مجمل الربح']),
+      valCls: 'c-green', note: `هامش ${pct(s['هامش مجمل الربح'])} من الإيرادات`,
+      progress: s['هامش مجمل الربح'] * 100, progressColor: 'var(--emerald)'
+    },
+    {
+      icon: '🎯', iconCls: 'sky-ic', cardCls: 'sky-card',
+      lbl: 'الربح التشغيلي', val: fmt(s['الربح التشغيلي']),
+      valCls: 'c-sky', note: `هامش ${pct(s['الربح التشغيلي']/s['إجمالي الإيرادات'])} تشغيلي`,
+      progress: (s['الربح التشغيلي']/s['إجمالي الإيرادات']) * 100, progressColor: 'var(--sky)'
+    },
+    {
+      icon: '✅', iconCls: 'green-ic', cardCls: 'green-card',
+      lbl: 'صافي الربح', val: fmt(s['صافي الربح']),
+      valCls: 'c-green', note: `هامش صافي ${pct(s['هامش صافي الربح'])}`,
+      progress: s['هامش صافي الربح'] * 100, progressColor: 'var(--emerald)'
+    },
+    {
+      icon: '🏪', iconCls: 'violet-ic', cardCls: 'violet-card',
+      lbl: 'عدد الفروع', val: s['عدد الفروع'].toString(),
+      valCls: 'c-violet', note: `${s['الفروع الرابحة']} رابحة · ${s['الفروع الخاسرة']} خاسرة`,
+      progress: (s['الفروع الرابحة']/s['عدد الفروع']) * 100, progressColor: 'var(--violet)'
+    },
+    {
+      icon: '⚡', iconCls: 'rose-ic', cardCls: 'rose-card',
+      lbl: 'المصاريف التشغيلية', val: fmt(Math.abs(s['المصاريف التشغيلية'])),
+      valCls: 'c-rose', note: `${pct(Math.abs(s['المصاريف التشغيلية'])/s['إجمالي الإيرادات'])} من الإيرادات`,
+      progress: (Math.abs(s['المصاريف التشغيلية'])/s['إجمالي الإيرادات']) * 100, progressColor: 'var(--rose)'
+    },
+    {
+      icon: '🏆', iconCls: 'gold-ic', cardCls: 'gold-card',
+      lbl: 'أفضل فرع ربحية', val: short(s['أفضل فرع'], 18),
+      valCls: 'c-gold', note: `صافي ربح: ${fmt(D.branches.find(b=>b['الفرع']===s['أفضل فرع'])?.['صافي الربح'] || 0)}`,
+      progress: 100, progressColor: 'var(--gold)'
+    },
+    {
+      icon: '🔺', iconCls: 'rose-ic', cardCls: 'rose-card',
+      lbl: 'فرع يحتاج مراجعة', val: short(s['أقل فرع'], 16),
+      valCls: 'c-rose', note: `خسارة: ${fmt(D.branches.find(b=>b['الفرع']===s['أقل فرع'])?.['صافي الربح'] || 0)}`,
+      progress: 100, progressColor: 'var(--rose)'
+    }
+  ];
+  
+  el.innerHTML = cards.map((c, i) => `
+    <div class="kpi-card ${c.cardCls} fade-up delay-${i+1}">
+      <div class="kpi-icon ${c.iconCls}">${c.icon}</div>
+      <div class="kpi-lbl">${c.lbl}</div>
+      <div class="kpi-val ${c.valCls}" style="${c.val.length > 12 ? 'font-size:14px' : ''}">${c.val}</div>
+      <div class="kpi-note">${c.note}</div>
+      <div class="kpi-progress">
+        <div class="kpi-progress-fill" style="width:${Math.min(c.progress,100)}%;background:${c.progressColor}"></div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ══════════════════════════════════════════════════
+// PROFITABILITY MATRIX
+// ══════════════════════════════════════════════════
+function renderProfitMatrix() {
+  const el = document.getElementById('profitMatrix');
+  if (!el) return;
+  const branches = D.branches;
+  const avgRevenue = D.summary['إجمالي الإيرادات'] / branches.length;
+  const avgMargin = branches.filter(b => b['هامش صافي الربح'] >= 0).reduce((a,b) => a + b['هامش صافي الربح'], 0) / branches.filter(b => b['هامش صافي الربح'] >= 0).length;
+  
+  const star  = branches.filter(b => b['الإيرادات'] >= avgRevenue && b['هامش صافي الربح'] >= avgMargin);
+  const grow  = branches.filter(b => b['الإيرادات'] >= avgRevenue && b['هامش صافي الربح'] < avgMargin && b['هامش صافي الربح'] >= 0);
+  const cash  = branches.filter(b => b['الإيرادات'] < avgRevenue && b['هامش صافي الربح'] >= avgMargin);
+  const watch = branches.filter(b => b['هامش صافي الربح'] < 0);
+  
+  const zones = [
+    { cls: 'star',  title: '⭐ نجوم الأداء', desc: 'إيرادات عالية + هامش ممتاز', items: star },
+    { cls: 'grow',  title: '🚀 فرص النمو', desc: 'إيرادات عالية + هامش يحتاج تحسين', items: grow },
+    { cls: 'cash',  title: '💎 الماسات الخفية', desc: 'إيرادات متوسطة + هامش ممتاز', items: cash },
+    { cls: 'watch', title: '⚠️ تحت المراقبة', desc: 'فروع تسجل خسائر حالياً', items: watch },
+  ];
+  
+  el.innerHTML = zones.map(z => `
+    <div class="p-zone ${z.cls}">
+      <div class="p-zone-title">${z.title}</div>
+      <div style="font-size:11px;color:var(--text-3);margin-bottom:10px">${z.desc}</div>
+      <div class="p-zone-branches">
+        ${z.items.length === 0 ? '<div class="p-zone-item">لا توجد فروع</div>' :
+          z.items.map(b => `
+            <div class="p-zone-item">
+              <span>• ${short(b['الفرع'], 24)}</span>
+              <span style="float:left;color:${clr(b['صافي الربح'])}">${fmt(b['صافي الربح'])}</span>
+            </div>
+          `).join('')
+        }
+      </div>
+    </div>
+  `).join('');
+}
+
+// ══════════════════════════════════════════════════
+// INCOME TABLE
+// ══════════════════════════════════════════════════
+function renderIncomeTable() {
+  const el = document.getElementById('incomeTable');
+  if (!el) return;
+  const rows = D.income;
+  const totalRev = D.summary['إجمالي الإيرادات'];
+  
+  el.innerHTML = `
+    <thead>
+      <tr>
+        <th>البند المالي</th>
+        <th>القيمة (ر.س)</th>
+        <th>النسبة من الإيرادات</th>
+        <th>المؤشر</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${rows.map((r, i) => {
+        const isTotal = r['البند'] === 'الإيرادات' || r['البند'].includes('الربح') || r['البند'].includes('صافي');
+        const color = r['القيمة'] >= 0 ? 'td-good' : 'td-bad';
+        const boldStyle = isTotal ? 'font-weight:700;background:rgba(255,255,255,.03)' : '';
+        const barW = Math.abs(r['القيمة']) / totalRev * 100;
+        return `
+          <tr style="${boldStyle}">
+            <td>${r['البند']}</td>
+            <td class="num ${color}">${fmtFull(r['القيمة'])}</td>
+            <td class="num">
+              <span style="color:${r['القيمة']>=0?'var(--emerald)':'var(--rose)'}">${pct(Math.abs(r['النسبة']))}</span>
+            </td>
+            <td>
+              <div class="exp-bar" style="width:80px">
+                <div class="exp-fill" style="width:${barW}%;background:${r['القيمة']>=0?'var(--emerald)':'var(--rose)'}"></div>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('')}
+    </tbody>
+  `;
+}
+
+// ══════════════════════════════════════════════════
+// EXPENSES TABLE
+// ══════════════════════════════════════════════════
+function renderExpensesTable() {
+  const el = document.getElementById('expensesTable');
+  if (!el) return;
+  const expenses = [...D.expenses].sort((a,b) => b['القيمة'] - a['القيمة']);
+  const maxVal = Math.max(...expenses.map(e => e['القيمة']));
+  
+  el.innerHTML = `
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>بند المصروف</th>
+            <th>القيمة (ر.س)</th>
+            <th>النسبة</th>
+            <th>مؤشر الحجم</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${expenses.map((e, i) => {
+            const w = (e['القيمة'] / maxVal) * 100;
+            const rankCls = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : 'rank-n';
+            return `
+              <tr>
+                <td><span class="rank ${rankCls}">${i+1}</span></td>
+                <td>${e['اسم الحساب']}</td>
+                <td class="num td-gold">${fmtFull(e['القيمة'])}</td>
+                <td class="num">${pct(e['النسبة'])}</td>
+                <td style="min-width:120px">
+                  <div class="exp-bar">
+                    <div class="exp-fill" style="width:${w}%;background:${COLORS[i % COLORS.length]}"></div>
+                  </div>
+                </td>
+              </tr>
+            `;
+          }).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+  
+  // Total expenses KPI
+  const totalEl = document.getElementById('totalExpVal');
+  if (totalEl) {
+    totalEl.textContent = fmt(Math.abs(D.summary['المصاريف التشغيلية']));
+  }
+}
+
+// ══════════════════════════════════════════════════
+// BRANCH NAVIGATION
+// ══════════════════════════════════════════════════
+let currentBranch = 0;
+
+function renderBranchList() {
+  const el = document.getElementById('branchListNav');
+  if (!el) return;
+  const sorted = [...D.branches].sort((a,b) => b['صافي الربح'] - a['صافي الربح']);
+  
+  el.innerHTML = sorted.map((b, i) => {
+    const origIdx = D.branches.findIndex(br => br['الفرع'] === b['الفرع']);
+    const isPos = b['صافي الربح'] >= 0;
+    return `
+      <div class="branch-pill ${origIdx === currentBranch ? 'active' : ''}" onclick="selectBranch(${origIdx})">
+        <span class="branch-pill-name">${short(b['الفرع'], 18)}</span>
+        <span class="branch-pill-val" style="color:${isPos?'var(--emerald)':'var(--rose)'}">${fmt(b['صافي الربح'])}</span>
+      </div>
+    `;
+  }).join('');
+}
+
+function selectBranch(idx) {
+  currentBranch = idx;
+  renderBranchList();
+  renderBranchDetail();
+}
+
+function moveBranchD(dir) {
+  currentBranch = (currentBranch + dir + D.branches.length) % D.branches.length;
+  renderBranchList();
+  renderBranchDetail();
+}
+
+function renderBranchDetail() {
+  const el = document.getElementById('branchDetailCard');
+  if (!el) return;
+  const b = D.branches[currentBranch];
+  
+  const metrics = [
+    { lbl: 'إجمالي الإيرادات', val: fmtFull(b['الإيرادات']), color: 'var(--sky)' },
+    { lbl: 'تكلفة المبيعات', val: fmtFull(Math.abs(b['تكلفة المبيعات'])), color: 'var(--rose)' },
+    { lbl: 'مجمل الربح', val: fmtFull(b['مجمل الربح']), color: 'var(--emerald)' },
+    { lbl: 'هامش مجمل الربح', val: pct(b['هامش مجمل الربح']), color: 'var(--emerald)' },
+    { lbl: 'المصاريف التشغيلية', val: fmtFull(Math.abs(b['المصاريف التشغيلية'])), color: 'var(--rose)' },
+    { lbl: 'الربح التشغيلي', val: fmtFull(b['الربح التشغيلي']), color: clr(b['الربح التشغيلي']) },
+    { lbl: 'صافي الربح', val: fmtFull(b['صافي الربح']), color: clr(b['صافي الربح']) },
+    { lbl: 'هامش صافي الربح', val: pct(b['هامش صافي الربح']), color: clr(b['هامش صافي الربح']) },
+  ];
+  
+  const rankClr = b['ترتيب الربحية'] <= 3 ? 'var(--gold)' : b['ترتيب الربحية'] <= 7 ? 'var(--sky)' : b['ترتيب الربحية'] <= 14 ? 'var(--text-2)' : 'var(--rose)';
+  
+  el.innerHTML = `
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:18px">
+      <div>
+        <div style="font-size:11px;color:var(--text-3);margin-bottom:4px">تفاصيل الفرع</div>
+        <h2 style="font-size:18px;font-weight:700;color:#fff;margin:0">${b['الفرع']}</h2>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <span class="ptag ${b['صافي الربح'] >= 0 ? 'green' : 'red'}">${b['صافي الربح'] >= 0 ? '✓ رابح' : '✗ خاسر'}</span>
+        <span class="ptag gold">ترتيب الربحية: ${b['ترتيب الربحية']}</span>
+        <span class="ptag" style="background:var(--sky-soft);color:var(--sky)">ترتيب الإيرادات: ${b['ترتيب الإيرادات']}</span>
+      </div>
+    </div>
+    <div class="branch-detail-grid">
+      ${metrics.map(m => `
+        <div class="branch-metric">
+          <div class="branch-metric-lbl">${m.lbl}</div>
+          <div class="branch-metric-val" style="color:${m.color}">${m.val}</div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  
+  // Render branch statement detail
+  renderBranchStatement(b['الفرع']);
+}
+
+function renderBranchStatement(branchName) {
+  const el = document.getElementById('branchStatementDetail');
+  if (!el) return;
+  
+  const detailedBranch = D.detailedBranches.find(b => b['الفرع'] === branchName);
+  if (!detailedBranch) {
+    el.innerHTML = '<div style="color:var(--text-3);font-size:13px">لا توجد بيانات تفصيلية</div>';
+    return;
+  }
+  
+  const rows = detailedBranch.rows;
+  const sections = {};
+  rows.forEach(r => {
+    if (!sections[r['القسم']]) sections[r['القسم']] = [];
+    sections[r['القسم']].push(r);
+  });
+  
+  const sectionOrder = ['الإيرادات', 'إجمالي', 'تكلفة المبيعات', 'مجمل الربح', 'المصاريف التشغيلية', 'الربح التشغيلي', 'صافي الربح'];
+  const sectionStyles = {
+    'الإيرادات': 'rev', 'إجمالي': 'op', 'تكلفة المبيعات': 'cogs',
+    'مجمل الربح': 'gp', 'المصاريف التشغيلية': 'exp',
+    'الربح التشغيلي': 'op', 'صافي الربح': 'net'
+  };
+  
+  let html = '';
+  sectionOrder.forEach(sec => {
+    if (!sections[sec]) return;
+    const nonZero = sections[sec].filter(r => Math.abs(r['القيمة']) > 0.01);
+    if (nonZero.length === 0) return;
+    
+    const isTotal = sec === 'إجمالي' || sec === 'مجمل الربح' || sec === 'الربح التشغيلي' || sec === 'صافي الربح';
+    
+    html += `<div class="stmt-section">`;
+    if (!isTotal) {
+      html += `<div class="stmt-section-head ${sectionStyles[sec] || ''}">${sec}</div>`;
+    }
+    
+    nonZero.forEach(r => {
+      const color = isTotal 
+        ? (r['القيمة'] >= 0 ? 'var(--emerald)' : 'var(--rose)') 
+        : (r['القيمة'] < 0 ? 'var(--rose)' : 'var(--text)');
+      const isMainTotal = isTotal;
+      html += `
+        <div class="${isMainTotal ? 'stmt-total' : 'stmt-row'}">
+          <div class="${isMainTotal ? '' : 'stmt-row-name'}" style="${isMainTotal ? 'color:var(--gold)' : ''}">${r['البند']}</div>
+          <div class="stmt-row-val" style="color:${isMainTotal ? 'var(--gold)' : color}">${fmtFull(r['القيمة'])}</div>
+        </div>
+      `;
+    });
+    html += `</div>`;
+  });
+  
+  el.innerHTML = html || '<div style="color:var(--text-3)">لا توجد بيانات</div>';
+}
+
+// ══════════════════════════════════════════════════
+// DETAIL STATEMENT PAGE
+// ══════════════════════════════════════════════════
+let detailIdx = 0;
+const detailBranches = DASHBOARD_DATA.detailedBranches;
+let currentDetailRows = [];
+
+function setupDetailPage() {
+  const sel = document.getElementById('detailBranchSelect');
+  if (!sel) return;
+  sel.innerHTML = detailBranches.map((b, i) =>
+    `<option value="${i}">${b['الفرع']}</option>`
+  ).join('');
+  sel.value = detailIdx;
+  renderDetailStatement();
+}
+
+function moveDetail(dir) {
+  detailIdx = (detailIdx + dir + detailBranches.length) % detailBranches.length;
+  document.getElementById('detailBranchSelect').value = detailIdx;
+  renderDetailStatement();
+}
+
+function filterDetail(query) {
+  const q = query.toLowerCase();
+  document.querySelectorAll('.detail-row').forEach(r => {
+    const txt = r.textContent.toLowerCase();
+    r.style.display = txt.includes(q) || !q ? '' : 'none';
+  });
+}
+
+function renderDetailStatement() {
+  const sel = document.getElementById('detailBranchSelect');
+  if (!sel) return;
+  detailIdx = parseInt(sel.value);
+  const branch = detailBranches[detailIdx];
+  
+  document.getElementById('detailBranchTitle').textContent = `قائمة دخل: ${branch['الفرع']}`;
+  
+  // Summary card
+  const b = D.branches.find(br => br['الفرع'] === branch['الفرع']) || {};
+  const sumEl = document.getElementById('detailBranchSummary');
+  if (sumEl) {
+    const isProfit = (b['صافي الربح'] || 0) >= 0;
+    sumEl.innerHTML = `
+      <div class="insight-card ${isProfit ? 'opp' : 'risk'}" style="margin-bottom:12px">
+        <div class="insight-type">${isProfit ? 'فرع رابح' : 'فرع خاسر'}</div>
+        <div class="insight-title">${isProfit ? 'صافي الربح' : 'صافي الخسارة'}</div>
+        <div class="insight-metric">
+          <div class="insight-metric-val">${fmt(b['صافي الربح'] || 0)}</div>
+          <div class="insight-metric-lbl">ر.س</div>
+        </div>
+      </div>
+      <div style="display:grid;gap:6px">
+        ${[
+          ['الإيرادات', b['الإيرادات'] || 0, 'var(--sky)'],
+          ['مجمل الربح', b['مجمل الربح'] || 0, 'var(--emerald)'],
+          ['المصاريف', Math.abs(b['المصاريف التشغيلية'] || 0), 'var(--rose)'],
+        ].map(([lbl, val, color]) => `
+          <div style="display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid var(--border)">
+            <span style="color:var(--text-3)">${lbl}</span>
+            <span style="color:${color};direction:ltr;font-weight:600">${fmtFull(val)}</span>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+  
+  // Full statement
+  const rows = branch.rows;
+  currentDetailRows = rows;
+  const sections = {};
+  rows.forEach(r => {
+    if (!sections[r['القسم']]) sections[r['القسم']] = [];
+    sections[r['القسم']].push(r);
+  });
+  
+  const sectionOrder = ['الإيرادات', 'إجمالي', 'تكلفة المبيعات', 'مجمل الربح', 'المصاريف التشغيلية', 'الربح التشغيلي', 'صافي الربح'];
+  const sectionStyles = {
+    'الإيرادات': 'rev', 'إجمالي': 'op', 'تكلفة المبيعات': 'cogs',
+    'مجمل الربح': 'gp', 'المصاريف التشغيلية': 'exp',
+    'الربح التشغيلي': 'op', 'صافي الربح': 'net'
+  };
+  
+  let html = `
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>القسم</th>
+            <th>البند</th>
+            <th>القيمة (ر.س)</th>
+            <th>النسبة من الإيرادات</th>
+          </tr>
+        </thead>
+        <tbody>
+  `;
+  
+  sectionOrder.forEach(sec => {
+    if (!sections[sec]) return;
+    const nonZero = sections[sec].filter(r => Math.abs(r['القيمة']) > 0.01);
+    if (nonZero.length === 0) return;
+    
+    nonZero.forEach(r => {
+      const isTotal = sec === 'إجمالي' || sec === 'مجمل الربح' || sec === 'الربح التشغيلي' || sec === 'صافي الربح';
+      const color = r['القيمة'] >= 0 ? 'td-good' : 'td-bad';
+      const boldStyle = isTotal ? 'font-weight:700;background:rgba(255,255,255,.03)' : '';
+      html += `
+        <tr class="detail-row" style="${boldStyle}">
+          <td style="color:var(--text-3);font-size:11px">${r['القسم']}</td>
+          <td style="${isTotal ? 'font-weight:700;color:var(--gold)' : ''}">${r['البند']}</td>
+          <td class="num ${color}">${fmtFull(r['القيمة'])}</td>
+          <td class="num" style="color:var(--text-3)">${(r['النسبة'] * 100).toFixed(2)}%</td>
+        </tr>
+      `;
+    });
+  });
+  
+  html += '</tbody></table></div>';
+  document.getElementById('detailStatement').innerHTML = html;
+}
+
+// ══════════════════════════════════════════════════
+// INSIGHTS
+// ══════════════════════════════════════════════════
+function renderInsights() {
+  const el = document.getElementById('insightCards');
+  if (!el) return;
+  const s = D.summary;
+  const branches = D.branches;
+  const sorted = [...branches].sort((a,b) => b['صافي الربح'] - a['صافي الربح']);
+  const topBranch = sorted[0];
+  const worstBranch = sorted[sorted.length - 1];
+  const lossCount = branches.filter(b => b['صافي الربح'] < 0).length;
+  const highRevLowMargin = branches.filter(b => b['الإيرادات'] > D.summary['إجمالي الإيرادات']/D.branches.length && b['هامش صافي الربح'] < 0.05 && b['هامش صافي الربح'] >= 0);
+  
+  const topExpense = D.expenses[0];
+  
+  const insights = [
+    {
+      cls: 'opp',
+      type: 'فرصة نمو',
+      title: 'قوة المنافذ عالية الإيراد',
+      body: `${highRevLowMargin.length} فروع تحقق إيرادات فوق المتوسط مع هامش ربحية ضعيف. تحسين الكفاءة التشغيلية لهذه الفروع يمكن أن يرفع صافي الربح الإجمالي بشكل ملموس دون الحاجة لتوسعة.`,
+      metric: pct(s['هامش صافي الربح']),
+      metricLbl: 'هامش صافي الربح الحالي'
+    },
+    {
+      cls: 'risk',
+      type: 'خطر تشغيلي',
+      title: 'فروع تعمل بخسائر',
+      body: `${lossCount} فروع تسجل خسائر. أعلى خسارة في "${worstBranch['الفرع']}" بقيمة ${fmt(Math.abs(worstBranch['صافي الربح']))} ر.س. يستوجب اتخاذ قرار بتعديل الهيكل التشغيلي أو مراجعة جدوى الاستمرار.`,
+      metric: lossCount.toString(),
+      metricLbl: 'فروع تحتاج تدخل عاجل'
+    },
+    {
+      cls: 'warn',
+      type: 'تحذير مالي',
+      title: 'تركز المصروفات في بند واحد',
+      body: `"${topExpense['اسم الحساب']}" يستأثر بـ ${pct(topExpense['النسبة'])} من إجمالي المصروفات التشغيلية. هذا التركز الشديد يمثل نقطة ضعف هيكلية ويستدعي مراجعة التوزيع بين الفروع.`,
+      metric: fmt(topExpense['القيمة']),
+      metricLbl: 'قيمة أكبر مصروف'
+    },
+    {
+      cls: 'info',
+      type: 'نظرة استراتيجية',
+      title: 'نموذج أداء قابل للتكرار',
+      body: `"${topBranch['الفرع']}" يُحقق هامشاً صافياً ${pct(topBranch['هامش صافي الربح'])} مقارنة بالمتوسط ${pct(s['هامش صافي الربح'])}. دراسة نموذج العمل لهذا الفرع وتطبيقه على الفروع الأضعف فرصة استراتيجية مباشرة.`,
+      metric: pct(topBranch['هامش صافي الربح']),
+      metricLbl: `هامش أفضل فرع`
+    },
+    {
+      cls: 'opp',
+      type: 'فرصة مالية',
+      title: 'هامش مجمل ربح قوي',
+      body: `هامش مجمل الربح الموحد ${pct(s['هامش مجمل الربح'])} يعكس تنافسية السعر وكفاءة التكلفة. المشكلة الرئيسية في المصروفات التشغيلية التي تأكل الجزء الأكبر من هذا الهامش قبل الوصول للربح التشغيلي.`,
+      metric: pct(s['هامش مجمل الربح']),
+      metricLbl: 'هامش مجمل الربح الموحد'
+    },
+    {
+      cls: 'warn',
+      type: 'توصية تنفيذية',
+      title: 'ضغط المصروفات على الربحية',
+      body: `المصروفات التشغيلية تبلغ ${pct(Math.abs(s['المصاريف التشغيلية'])/s['إجمالي الإيرادات'])} من الإيرادات، مما يُحوّل هامش مجمل الربح من ${pct(s['هامش مجمل الربح'])} إلى صافي ربح ${pct(s['هامش صافي الربح'])} فقط. تخفيض المصروفات 10% يرفع صافي الربح بنسبة 47%.`,
+      metric: '47%',
+      metricLbl: 'زيادة متوقعة في الربح'
+    }
+  ];
+  
+  el.innerHTML = insights.map(ins => `
+    <div class="insight-card ${ins.cls} fade-up">
+      <div class="insight-type">${ins.type}</div>
+      <div class="insight-title">${ins.title}</div>
+      <div class="insight-body">${ins.body}</div>
+      <div class="insight-metric">
+        <div class="insight-metric-val">${ins.metric}</div>
+        <div class="insight-metric-lbl">${ins.metricLbl}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ══════════════════════════════════════════════════
+// INSIGHT TABLE
+// ══════════════════════════════════════════════════
+let sortMode = 'الربحية';
+function sortTable(mode, btn) {
+  sortMode = mode;
+  document.querySelectorAll('.tabs .tab').forEach(t => t.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderInsightTable();
+}
+
+function renderInsightTable() {
+  const el = document.getElementById('insightTable');
+  if (!el) return;
+  
+  let sorted = [...D.branches];
+  if (sortMode === 'الربحية') sorted.sort((a,b) => b['صافي الربح'] - a['صافي الربح']);
+  else if (sortMode === 'الإيرادات') sorted.sort((a,b) => b['الإيرادات'] - a['الإيرادات']);
+  else sorted.sort((a,b) => b['هامش صافي الربح'] - a['هامش صافي الربح']);
+  
+  el.innerHTML = `
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>الفرع</th>
+        <th>الإيرادات</th>
+        <th>مجمل الربح</th>
+        <th>هامش إجمالي</th>
+        <th>المصاريف التشغيلية</th>
+        <th>صافي الربح</th>
+        <th>هامش صافي</th>
+        <th>الحالة</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${sorted.map((b, i) => {
+        const rankCls = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : 'rank-n';
+        const isProfit = b['صافي الربح'] >= 0;
+        return `
+          <tr>
+            <td><span class="rank ${rankCls}">${i+1}</span></td>
+            <td style="font-weight:500;max-width:160px;overflow:hidden;text-overflow:ellipsis">${b['الفرع']}</td>
+            <td class="num">${fmtFull(b['الإيرادات'])}</td>
+            <td class="num td-good">${fmtFull(b['مجمل الربح'])}</td>
+            <td class="num">${pct(b['هامش مجمل الربح'])}</td>
+            <td class="num td-bad">${fmtFull(Math.abs(b['المصاريف التشغيلية']))}</td>
+            <td class="num ${cls(b['صافي الربح'])}">${fmtFull(b['صافي الربح'])}</td>
+            <td class="num ${cls(b['هامش صافي الربح'])}">${pct(b['هامش صافي الربح'])}</td>
+            <td>
+              <span class="ptag ${isProfit ? 'green' : 'red'}">${isProfit ? '✓ رابح' : '✗ خاسر'}</span>
+            </td>
+          </tr>
+        `;
+      }).join('')}
+    </tbody>
+  `;
+}
+
+// ══════════════════════════════════════════════════
+// MARGIN BAR CHART
+// ══════════════════════════════════════════════════
+function renderMarginChart() {
+  const el = document.getElementById('marginBarChart');
+  if (!el) return;
+  const sorted = [...D.branches].sort((a,b) => b['هامش صافي الربح'] - a['هامش صافي الربح']);
+  const maxVal = Math.max(...sorted.map(b => Math.abs(b['هامش صافي الربح'])));
+  
+  el.innerHTML = sorted.map((b, i) => {
+    const v = b['هامش صافي الربح'];
+    const w = maxVal ? (Math.abs(v) / maxVal * 100) : 0;
+    const color = v >= 0 ? COLORS[i % 6] : 'var(--rose)';
+    return `
+      <div class="bar-item">
+        <div class="bar-name" title="${b['الفرع']}">${short(b['الفرع'], 18)}</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:${w}%;background:${color}"></div>
+        </div>
+        <div class="bar-val" style="color:${color}">${pct(v)}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ══════════════════════════════════════════════════
+// PARETO CHART (simple)
+// ══════════════════════════════════════════════════
+function renderParetoChart() {
+  const el = document.getElementById('paretoChart');
+  if (!el) return;
+  const expenses = [...D.expenses].sort((a,b) => b['القيمة'] - a['القيمة']);
+  const total = expenses.reduce((a,e) => a + e['القيمة'], 0);
+  let cumulative = 0;
+  
+  el.innerHTML = expenses.slice(0, 8).map((e, i) => {
+    cumulative += e['القيمة'];
+    const cumPct = cumulative / total;
+    const barW = (e['القيمة'] / expenses[0]['القيمة']) * 100;
+    return `
+      <div class="bar-item">
+        <div class="bar-name" title="${e['اسم الحساب']}">${short(e['اسم الحساب'], 14)}</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:${barW}%;background:${COLORS[i]}"></div>
+        </div>
+        <div class="bar-val" style="font-size:10px;color:var(--text-3)">${pct(cumPct)} مجمع</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ══════════════════════════════════════════════════
+// INITIALIZE
+// ══════════════════════════════════════════════════
+function init() {
+  renderHeroStats();
+  renderMainKPIs('mainKpis');
+  renderMainKPIs('kpiPage');
+  
+  // Overview charts
+  renderBarChart('profitBarChart',
+    [...D.branches].sort((a,b) => b['صافي الربح'] - a['صافي الربح']).slice(0, 10),
+    'صافي الربح', 'الفرع', v => v >= 0 ? 'var(--emerald)' : 'var(--rose)'
+  );
+  renderWaterfall('waterfallChart', D.income);
+  renderMarginChart();
+  renderRevenueDist('revenueDistChart', D.branches, 10);
+  renderProfitMatrix();
+  
+  // KPI page
+  renderBarChart('revRankChart',
+    [...D.branches].sort((a,b) => b['الإيرادات'] - a['الإيرادات']),
+    'الإيرادات', 'الفرع', (v,i) => COLORS[i % COLORS.length]
+  );
+  renderBarChart('grossMarginChart',
+    [...D.branches].sort((a,b) => b['هامش مجمل الربح'] - a['هامش مجمل الربح']),
+    'هامش مجمل الربح', 'الفرع', (v) => v >= 0.3 ? 'var(--emerald)' : v >= 0.2 ? 'var(--gold)' : 'var(--rose)'
+  );
+  
+  // Income page
+  renderIncomeTable();
+  renderWaterfall('incomeBridge', D.income);
+  
+  // Expenses page
+  renderExpensesTable();
+  renderBarChart('expBarChart', D.expenses, 'القيمة', 'اسم الحساب', null, null, true);
+  renderParetoChart();
+  
+  // Branches page
+  renderBranchList();
+  renderBranchDetail();
+  
+  // Detail page
+  setupDetailPage();
+  
+  // Insights
+  renderInsights();
+  renderInsightTable();
+}
+
+document.addEventListener('DOMContentLoaded', init);
+
+</script>
+</body>
+</html>
